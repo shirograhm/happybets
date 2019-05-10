@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>746428470917-0p0o87vg65jkke7n1padh2r39a1205q9.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.746428470917-0p0o87vg65jkke7n1padh2r39a1205q9</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAloCuWXsfrpuH2RQr2nankf7RdVag0b10</string>
+	<key>GCM_SENDER_ID</key>
+	<string>746428470917</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>cs.projects.happybets</string>
+	<key>PROJECT_ID</key>
+	<string>happybets</string>
+	<key>STORAGE_BUCKET</key>
+	<string>happybets.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:746428470917:ios:f6bd4f0f68e4ccd4</string>
+	<key>DATABASE_URL</key>
+	<string>https://happybets.firebaseio.com</string>
+</dict>
+</plist>
