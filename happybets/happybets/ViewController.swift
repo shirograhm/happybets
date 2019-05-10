@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Woah this is sicko mode")
         // Do any additional setup after loading the view.
     }
 
