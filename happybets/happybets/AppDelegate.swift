@@ -12,6 +12,8 @@
 import UIKit
 
 @UIApplicationMain
+
+// PLEASE WORK
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
