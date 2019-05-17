@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28081C3B228E9B0600F4F22A /* happytests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28081C3A228E9B0600F4F22A /* happytests.swift */; };
 		287B51E82285071B0035C13A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 287B51E72285071B0035C13A /* GoogleService-Info.plist */; };
 		28D2F6F0228397CC0008ECC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D2F6EF228397CC0008ECC0 /* AppDelegate.swift */; };
 		28D2F6F5228397CC0008ECC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D2F6F3228397CC0008ECC0 /* Main.storyboard */; };
@@ -17,7 +18,20 @@
 		F4B75B60C8949EF83F0A15A9 /* Pods_happybets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B4BB2E9B5E8E03230B65E9E /* Pods_happybets.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		28081C3D228E9B0600F4F22A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28D2F6E4228397CC0008ECC0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28D2F6EB228397CC0008ECC0;
+			remoteInfo = happybets;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		28081C38228E9B0500F4F22A /* happytests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = happytests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		28081C3A228E9B0600F4F22A /* happytests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = happytests.swift; sourceTree = "<group>"; };
+		28081C3C228E9B0600F4F22A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		287B51E72285071B0035C13A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28D2F6EC228397CC0008ECC0 /* happybets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = happybets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28D2F6EF228397CC0008ECC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +47,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		28081C35228E9B0500F4F22A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28D2F6E9228397CC0008ECC0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -44,11 +65,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28081C39228E9B0600F4F22A /* happytests */ = {
+			isa = PBXGroup;
+			children = (
+				28081C3A228E9B0600F4F22A /* happytests.swift */,
+				28081C3C228E9B0600F4F22A /* Info.plist */,
+			);
+			path = happytests;
+			sourceTree = "<group>";
+		};
 		28D2F6E3228397CC0008ECC0 = {
 			isa = PBXGroup;
 			children = (
 				28E79EA422850D8B00987D8E /* Models */,
 				28D2F6EE228397CC0008ECC0 /* happybets */,
+				28081C39228E9B0600F4F22A /* happytests */,
 				28D2F6ED228397CC0008ECC0 /* Products */,
 				E2B2B9593E5AAE6B621E14CB /* Pods */,
 				D5891420EC3D890D17AE9C91 /* Frameworks */,
@@ -59,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				28D2F6EC228397CC0008ECC0 /* happybets.app */,
+				28081C38228E9B0500F4F22A /* happytests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,6 +137,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		28081C37228E9B0500F4F22A /* happytests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28081C3F228E9B0600F4F22A /* Build configuration list for PBXNativeTarget "happytests" */;
+			buildPhases = (
+				28081C34228E9B0500F4F22A /* Sources */,
+				28081C35228E9B0500F4F22A /* Frameworks */,
+				28081C36228E9B0500F4F22A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28081C3E228E9B0600F4F22A /* PBXTargetDependency */,
+			);
+			name = happytests;
+			productName = happytests;
+			productReference = 28081C38228E9B0500F4F22A /* happytests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		28D2F6EB228397CC0008ECC0 /* happybets */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28D2F6FE228397CD0008ECC0 /* Build configuration list for PBXNativeTarget "happybets" */;
@@ -134,6 +184,10 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Happy Bets LLC";
 				TargetAttributes = {
+					28081C37228E9B0500F4F22A = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 28D2F6EB228397CC0008ECC0;
+					};
 					28D2F6EB228397CC0008ECC0 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
@@ -153,11 +207,19 @@
 			projectRoot = "";
 			targets = (
 				28D2F6EB228397CC0008ECC0 /* happybets */,
+				28081C37228E9B0500F4F22A /* happytests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		28081C36228E9B0500F4F22A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28D2F6EA228397CC0008ECC0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -213,6 +275,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		28081C34228E9B0500F4F22A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28081C3B228E9B0600F4F22A /* happytests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28D2F6E8228397CC0008ECC0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -224,6 +294,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		28081C3E228E9B0600F4F22A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28D2F6EB228397CC0008ECC0 /* happybets */;
+			targetProxy = 28081C3D228E9B0600F4F22A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		28D2F6F3228397CC0008ECC0 /* Main.storyboard */ = {
@@ -245,6 +323,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		28081C40228E9B0600F4F22A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5CJA4PC7S3;
+				INFOPLIST_FILE = happytests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.happytests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/happybets.app/happybets";
+			};
+			name = Debug;
+		};
+		28081C41228E9B0600F4F22A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5CJA4PC7S3;
+				INFOPLIST_FILE = happytests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.happytests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/happybets.app/happybets";
+			};
+			name = Release;
+		};
 		28D2F6FC228397CD0008ECC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -404,6 +522,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		28081C3F228E9B0600F4F22A /* Build configuration list for PBXNativeTarget "happytests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28081C40228E9B0600F4F22A /* Debug */,
+				28081C41228E9B0600F4F22A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		28D2F6E7228397CC0008ECC0 /* Build configuration list for PBXProject "happybets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
