@@ -18,16 +18,24 @@ class happytests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testEasyNumbers() {
+        XCTAssert(1 + 1 == 2)
+        XCTAssertFalse(1 + 3 < -10)
+        XCTAssert("hello there".contains("hello"))
+    }
+    
+    func testAdminLogins() {
+        // Some code to test our authentication here
     }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
-            // Put the code you want to measure the time of here.
+            // Some time-pertinent function tests
+            let x = 8.0
+            let y = x - 3.5
+            let z = y + 3 * x
+            print(String(z) + " is a cool number!")
         }
     }
-
 }

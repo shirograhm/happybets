@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		28081C3B228E9B0600F4F22A /* happytests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28081C3A228E9B0600F4F22A /* happytests.swift */; };
-		287B51E82285071B0035C13A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 287B51E72285071B0035C13A /* GoogleService-Info.plist */; };
+		28A9506D228EA261006CA1F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28A9506C228EA261006CA1F0 /* GoogleService-Info.plist */; };
 		28D2F6F0228397CC0008ECC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D2F6EF228397CC0008ECC0 /* AppDelegate.swift */; };
 		28D2F6F5228397CC0008ECC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D2F6F3228397CC0008ECC0 /* Main.storyboard */; };
 		28D2F6F7228397CD0008ECC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28D2F6F6228397CD0008ECC0 /* Assets.xcassets */; };
@@ -32,7 +32,7 @@
 		28081C38228E9B0500F4F22A /* happytests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = happytests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28081C3A228E9B0600F4F22A /* happytests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = happytests.swift; sourceTree = "<group>"; };
 		28081C3C228E9B0600F4F22A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		287B51E72285071B0035C13A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		28A9506C228EA261006CA1F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28D2F6EC228397CC0008ECC0 /* happybets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = happybets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28D2F6EF228397CC0008ECC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28D2F6F4228397CC0008ECC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 				28D2F6F6228397CD0008ECC0 /* Assets.xcassets */,
 				28D2F6F8228397CD0008ECC0 /* LaunchScreen.storyboard */,
 				28D2F6FB228397CD0008ECC0 /* Info.plist */,
-				287B51E72285071B0035C13A /* GoogleService-Info.plist */,
+				28A9506C228EA261006CA1F0 /* GoogleService-Info.plist */,
 			);
 			path = happybets;
 			sourceTree = "<group>";
@@ -225,7 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28D2F6FA228397CD0008ECC0 /* LaunchScreen.storyboard in Resources */,
-				287B51E82285071B0035C13A /* GoogleService-Info.plist in Resources */,
+				28A9506D228EA261006CA1F0 /* GoogleService-Info.plist in Resources */,
 				28D2F6F7228397CD0008ECC0 /* Assets.xcassets in Resources */,
 				28D2F6F5228397CC0008ECC0 /* Main.storyboard in Resources */,
 			);
