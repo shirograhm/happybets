@@ -48,6 +48,7 @@
                ReferencedContainer = "container:happybets.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+
       </BuildActionEntries>
    </BuildAction>
    <TestAction

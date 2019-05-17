@@ -6,10 +6,15 @@
 //  Copyright © 2019 Happy Bets LLC. All rights reserved.
 //
 
+
+// Gabe has commented on this
+
 import UIKit
 import Firebase
 
 @UIApplicationMain
+
+// PLEASE WORK
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
