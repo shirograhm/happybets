@@ -1,5 +1,5 @@
 language: swift
 xcode_project: happybets/happybets.xcodeproj # path to your xcodeproj folder
-xcode_scheme: 
+xcode_scheme: happybets/happybets
 xcode_destination: platform=iOS Simulator,OS=12.2,name=iPhone X
 pod file: happybets/Podfile
