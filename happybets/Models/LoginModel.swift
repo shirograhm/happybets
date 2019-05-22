@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+class LoginModel {
+    static func attemptLogin(user : String, pass : String) -> Bool {
+        // TODO: Firebase stuff
+        return true;
+    }
+}
