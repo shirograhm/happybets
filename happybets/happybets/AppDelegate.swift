@@ -10,6 +10,7 @@
 // Gabe has commented on this
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 
