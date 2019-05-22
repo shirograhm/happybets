@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		28081C3B228E9B0600F4F22A /* happytests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28081C3A228E9B0600F4F22A /* happytests.swift */; };
+		282A1BD72295180900B7EF7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 282A1BD62295180900B7EF7B /* GoogleService-Info.plist */; };
 		28D2F6F0228397CC0008ECC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D2F6EF228397CC0008ECC0 /* AppDelegate.swift */; };
 		28D2F6F5228397CC0008ECC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D2F6F3228397CC0008ECC0 /* Main.storyboard */; };
 		28D2F6F7228397CD0008ECC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28D2F6F6228397CD0008ECC0 /* Assets.xcassets */; };
 		28D2F6FA228397CD0008ECC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D2F6F8228397CD0008ECC0 /* LaunchScreen.storyboard */; };
 		28E79EA322850B1F00987D8E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E79EA222850B1F00987D8E /* LoginViewController.swift */; };
-		470019E72294E9FC008CD8BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 470019E62294E9FC008CD8BA /* GoogleService-Info.plist */; };
 		47944FF0228E4C79004BD0DE /* AuthenticatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47944FEF228E4C79004BD0DE /* AuthenticatorModel.swift */; };
 		EFAED7F24A0C5107D8D378E9 /* Pods_happybets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8988F4F32B5045740538CE39 /* Pods_happybets.framework */; };
 /* End PBXBuildFile section */
@@ -32,6 +32,7 @@
 		22B93BB7FBC59BB24116D67B /* Pods-happybets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-happybets.release.xcconfig"; path = "Pods/Target Support Files/Pods-happybets/Pods-happybets.release.xcconfig"; sourceTree = "<group>"; };
 		28081C38228E9B0500F4F22A /* happytests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = happytests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28081C3A228E9B0600F4F22A /* happytests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = happytests.swift; sourceTree = "<group>"; };
+		282A1BD62295180900B7EF7B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28D2F6EC228397CC0008ECC0 /* happybets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = happybets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28D2F6EF228397CC0008ECC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28D2F6F4228397CC0008ECC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,7 +41,6 @@
 		28D2F6FB228397CD0008ECC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28E79EA222850B1F00987D8E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		28E79EA522850DA800987D8E /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
-		470019E62294E9FC008CD8BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		47944FEF228E4C79004BD0DE /* AuthenticatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorModel.swift; sourceTree = "<group>"; };
 		8988F4F32B5045740538CE39 /* Pods_happybets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_happybets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABDC62959E7CD77216840AE /* Pods-happybets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-happybets.debug.xcconfig"; path = "Pods/Target Support Files/Pods-happybets/Pods-happybets.debug.xcconfig"; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 				28D2F6F6228397CD0008ECC0 /* Assets.xcassets */,
 				28D2F6F8228397CD0008ECC0 /* LaunchScreen.storyboard */,
 				28D2F6FB228397CD0008ECC0 /* Info.plist */,
-				470019E62294E9FC008CD8BA /* GoogleService-Info.plist */,
+				282A1BD62295180900B7EF7B /* GoogleService-Info.plist */,
 				47944FEF228E4C79004BD0DE /* AuthenticatorModel.swift */,
 			);
 			path = happybets;
@@ -225,7 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28D2F6FA228397CD0008ECC0 /* LaunchScreen.storyboard in Resources */,
-				470019E72294E9FC008CD8BA /* GoogleService-Info.plist in Resources */,
+				282A1BD72295180900B7EF7B /* GoogleService-Info.plist in Resources */,
 				28D2F6F7228397CD0008ECC0 /* Assets.xcassets in Resources */,
 				28D2F6F5228397CC0008ECC0 /* Main.storyboard in Resources */,
 			);
@@ -332,7 +332,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CJA4PC7S3;
 				INFOPLIST_FILE = happytests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.happytests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -348,7 +352,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CJA4PC7S3;
 				INFOPLIST_FILE = happytests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.happytests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -482,7 +490,10 @@
 				DEVELOPMENT_TEAM = 5CJA4PC7S3;
 				INFOPLIST_FILE = happybets/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.happybets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -499,7 +510,10 @@
 				DEVELOPMENT_TEAM = 5CJA4PC7S3;
 				INFOPLIST_FILE = happybets/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.happybets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
