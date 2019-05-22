@@ -15,7 +15,7 @@
 		28E79EA322850B1F00987D8E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E79EA222850B1F00987D8E /* LoginViewController.swift */; };
 		470019E72294E9FC008CD8BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 470019E62294E9FC008CD8BA /* GoogleService-Info.plist */; };
 		47944FF0228E4C79004BD0DE /* AuthenticatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47944FEF228E4C79004BD0DE /* AuthenticatorModel.swift */; };
-		F4B75B60C8949EF83F0A15A9 /* Pods_happybets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B4BB2E9B5E8E03230B65E9E /* Pods_happybets.framework */; };
+		EFAED7F24A0C5107D8D378E9 /* Pods_happybets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8988F4F32B5045740538CE39 /* Pods_happybets.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,9 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22B93BB7FBC59BB24116D67B /* Pods-happybets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-happybets.release.xcconfig"; path = "Pods/Target Support Files/Pods-happybets/Pods-happybets.release.xcconfig"; sourceTree = "<group>"; };
 		28081C38228E9B0500F4F22A /* happytests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = happytests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28081C3A228E9B0600F4F22A /* happytests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = happytests.swift; sourceTree = "<group>"; };
-
 		28D2F6EC228397CC0008ECC0 /* happybets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = happybets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28D2F6EF228397CC0008ECC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28D2F6F4228397CC0008ECC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,11 +40,10 @@
 		28D2F6FB228397CD0008ECC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28E79EA222850B1F00987D8E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		28E79EA522850DA800987D8E /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
-		2A7A1093DD6BB390BCDA0317 /* Pods-happybets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-happybets.debug.xcconfig"; path = "Pods/Target Support Files/Pods-happybets/Pods-happybets.debug.xcconfig"; sourceTree = "<group>"; };
-		349937145978D534745BAE0E /* Pods-happybets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-happybets.release.xcconfig"; path = "Pods/Target Support Files/Pods-happybets/Pods-happybets.release.xcconfig"; sourceTree = "<group>"; };
 		470019E62294E9FC008CD8BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		47944FEF228E4C79004BD0DE /* AuthenticatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorModel.swift; sourceTree = "<group>"; };
-		4B4BB2E9B5E8E03230B65E9E /* Pods_happybets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_happybets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8988F4F32B5045740538CE39 /* Pods_happybets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_happybets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CABDC62959E7CD77216840AE /* Pods-happybets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-happybets.debug.xcconfig"; path = "Pods/Target Support Files/Pods-happybets/Pods-happybets.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,18 +58,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4B75B60C8949EF83F0A15A9 /* Pods_happybets.framework in Frameworks */,
+				EFAED7F24A0C5107D8D378E9 /* Pods_happybets.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2213CE8DA76F39A258264C10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8988F4F32B5045740538CE39 /* Pods_happybets.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		28081C39228E9B0600F4F22A /* happytests */ = {
 			isa = PBXGroup;
 			children = (
 				28081C3A228E9B0600F4F22A /* happytests.swift */,
-				28081C3C228E9B0600F4F22A /* Info.plist */,
 			);
 			path = happytests;
 			sourceTree = "<group>";
@@ -82,8 +88,8 @@
 				28D2F6EE228397CC0008ECC0 /* happybets */,
 				28081C39228E9B0600F4F22A /* happytests */,
 				28D2F6ED228397CC0008ECC0 /* Products */,
-				E2B2B9593E5AAE6B621E14CB /* Pods */,
-				D5891420EC3D890D17AE9C91 /* Frameworks */,
+				672FDB502466AE03F077B679 /* Pods */,
+				2213CE8DA76F39A258264C10 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,19 +125,11 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		D5891420EC3D890D17AE9C91 /* Frameworks */ = {
+		672FDB502466AE03F077B679 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4B4BB2E9B5E8E03230B65E9E /* Pods_happybets.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E2B2B9593E5AAE6B621E14CB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2A7A1093DD6BB390BCDA0317 /* Pods-happybets.debug.xcconfig */,
-				349937145978D534745BAE0E /* Pods-happybets.release.xcconfig */,
+				CABDC62959E7CD77216840AE /* Pods-happybets.debug.xcconfig */,
+				22B93BB7FBC59BB24116D67B /* Pods-happybets.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -161,11 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28D2F6FE228397CD0008ECC0 /* Build configuration list for PBXNativeTarget "happybets" */;
 			buildPhases = (
-				237AA2358B13B2B03892214A /* [CP] Check Pods Manifest.lock */,
+				DE432F2ED90E7E1937ACB79D /* [CP] Check Pods Manifest.lock */,
 				28D2F6E8228397CC0008ECC0 /* Sources */,
 				28D2F6E9228397CC0008ECC0 /* Frameworks */,
 				28D2F6EA228397CC0008ECC0 /* Resources */,
-				CE579358530C71A9324A2FBF /* [CP] Embed Pods Frameworks */,
+				0E3E50B55F3C70C34048A476 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -236,7 +234,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		237AA2358B13B2B03892214A /* [CP] Check Pods Manifest.lock */ = {
+		0E3E50B55F3C70C34048A476 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-happybets/Pods-happybets-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-happybets/Pods-happybets-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE432F2ED90E7E1937ACB79D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -252,28 +272,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CE579358530C71A9324A2FBF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-happybets/Pods-happybets-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-happybets/Pods-happybets-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -334,11 +332,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CJA4PC7S3;
 				INFOPLIST_FILE = happytests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.happytests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -354,11 +348,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CJA4PC7S3;
 				INFOPLIST_FILE = happytests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.happytests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -485,17 +475,14 @@
 		};
 		28D2F6FF228397CD0008ECC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2A7A1093DD6BB390BCDA0317 /* Pods-happybets.debug.xcconfig */;
+			baseConfigurationReference = CABDC62959E7CD77216840AE /* Pods-happybets.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CJA4PC7S3;
 				INFOPLIST_FILE = happybets/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.happybets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -505,17 +492,14 @@
 		};
 		28D2F700228397CD0008ECC0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 349937145978D534745BAE0E /* Pods-happybets.release.xcconfig */;
+			baseConfigurationReference = 22B93BB7FBC59BB24116D67B /* Pods-happybets.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CJA4PC7S3;
 				INFOPLIST_FILE = happybets/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.happybets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

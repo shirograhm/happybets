@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CD2DBEF83AD0ABA1BE4FA60E86C27132"
+               BlueprintIdentifier = "83ED11B0234BC7E969976189F74E9864"
                BuildableName = "Pods_happybets.framework"
                BlueprintName = "Pods-happybets"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -48,7 +48,6 @@
                ReferencedContainer = "container:happybets.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-
       </BuildActionEntries>
    </BuildAction>
    <TestAction
