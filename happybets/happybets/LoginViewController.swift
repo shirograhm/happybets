@@ -9,18 +9,29 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
+    
     @IBOutlet weak var userText: UITextField!
     @IBOutlet weak var passText: UITextField!
+    
 
+    
     @IBAction func attemptLogin(_ sender: UIButton) {
-        // button functionality
+        print(userText.text! + " " + passText.text!)
+        AuthenticatorModel.login(withEmail: userText.text ?? "", password: passText.text ?? "")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        userText.delegate = self
+        passText.delegate = self
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        userText.resignFirstResponder()
+        passText.resignFirstResponder()
+        return true
     }
     
 

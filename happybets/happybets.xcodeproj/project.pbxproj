@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		28081C3B228E9B0600F4F22A /* happytests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28081C3A228E9B0600F4F22A /* happytests.swift */; };
-		28A9506D228EA261006CA1F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28A9506C228EA261006CA1F0 /* GoogleService-Info.plist */; };
 		28D2F6F0228397CC0008ECC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D2F6EF228397CC0008ECC0 /* AppDelegate.swift */; };
 		28D2F6F5228397CC0008ECC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D2F6F3228397CC0008ECC0 /* Main.storyboard */; };
 		28D2F6F7228397CD0008ECC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28D2F6F6228397CD0008ECC0 /* Assets.xcassets */; };
 		28D2F6FA228397CD0008ECC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D2F6F8228397CD0008ECC0 /* LaunchScreen.storyboard */; };
 		28E79EA322850B1F00987D8E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E79EA222850B1F00987D8E /* LoginViewController.swift */; };
-		28E79EA622850DA800987D8E /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E79EA522850DA800987D8E /* LoginModel.swift */; };
+		470019E72294E9FC008CD8BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 470019E62294E9FC008CD8BA /* GoogleService-Info.plist */; };
+		47944FF0228E4C79004BD0DE /* AuthenticatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47944FEF228E4C79004BD0DE /* AuthenticatorModel.swift */; };
 		F4B75B60C8949EF83F0A15A9 /* Pods_happybets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B4BB2E9B5E8E03230B65E9E /* Pods_happybets.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,8 +31,7 @@
 /* Begin PBXFileReference section */
 		28081C38228E9B0500F4F22A /* happytests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = happytests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28081C3A228E9B0600F4F22A /* happytests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = happytests.swift; sourceTree = "<group>"; };
-		28081C3C228E9B0600F4F22A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		28A9506C228EA261006CA1F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+
 		28D2F6EC228397CC0008ECC0 /* happybets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = happybets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28D2F6EF228397CC0008ECC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28D2F6F4228397CC0008ECC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,6 +42,8 @@
 		28E79EA522850DA800987D8E /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		2A7A1093DD6BB390BCDA0317 /* Pods-happybets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-happybets.debug.xcconfig"; path = "Pods/Target Support Files/Pods-happybets/Pods-happybets.debug.xcconfig"; sourceTree = "<group>"; };
 		349937145978D534745BAE0E /* Pods-happybets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-happybets.release.xcconfig"; path = "Pods/Target Support Files/Pods-happybets/Pods-happybets.release.xcconfig"; sourceTree = "<group>"; };
+		470019E62294E9FC008CD8BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		47944FEF228E4C79004BD0DE /* AuthenticatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorModel.swift; sourceTree = "<group>"; };
 		4B4BB2E9B5E8E03230B65E9E /* Pods_happybets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_happybets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -104,7 +105,8 @@
 				28D2F6F6228397CD0008ECC0 /* Assets.xcassets */,
 				28D2F6F8228397CD0008ECC0 /* LaunchScreen.storyboard */,
 				28D2F6FB228397CD0008ECC0 /* Info.plist */,
-				28A9506C228EA261006CA1F0 /* GoogleService-Info.plist */,
+				470019E62294E9FC008CD8BA /* GoogleService-Info.plist */,
+				47944FEF228E4C79004BD0DE /* AuthenticatorModel.swift */,
 			);
 			path = happybets;
 			sourceTree = "<group>";
@@ -225,7 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28D2F6FA228397CD0008ECC0 /* LaunchScreen.storyboard in Resources */,
-				28A9506D228EA261006CA1F0 /* GoogleService-Info.plist in Resources */,
+				470019E72294E9FC008CD8BA /* GoogleService-Info.plist in Resources */,
 				28D2F6F7228397CD0008ECC0 /* Assets.xcassets in Resources */,
 				28D2F6F5228397CC0008ECC0 /* Main.storyboard in Resources */,
 			);
@@ -258,18 +260,20 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-happybets/Pods-happybets-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-happybets/Pods-happybets-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-happybets/Pods-happybets-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-happybets/Pods-happybets-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -288,7 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28E79EA322850B1F00987D8E /* LoginViewController.swift in Sources */,
-				28E79EA622850DA800987D8E /* LoginModel.swift in Sources */,
+				47944FF0228E4C79004BD0DE /* AuthenticatorModel.swift in Sources */,
 				28D2F6F0228397CC0008ECC0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
