@@ -11,7 +11,7 @@ import Firebase
 
 class AuthenticatorModel {
     
-    public static func createUser(email: String, password: String, _ callback: ((Error?) -> ())? = nil){
+    public static func createUser(email: String, password: String, _ callback: ((Error?) -> ())? = nil) {
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if let e = error{
                 callback?(e)
@@ -21,13 +21,13 @@ class AuthenticatorModel {
         }
     }
     
-    public static func login(withEmail email: String, password: String, _ callback: ((Error?) -> ())? = nil){
+    public static func login(withEmail email: String, password: String, _ callback: @escaping ((AuthDataResult?) -> ())) {
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            if let e = error{
-                callback?(e)
+            if let e = error {
+                print(e)
                 return
             }
-            callback?(nil)
+            callback(user)
         }
     }
     
