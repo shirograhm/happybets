@@ -10,6 +10,10 @@
 		28081C3B228E9B0600F4F22A /* happytests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28081C3A228E9B0600F4F22A /* happytests.swift */; };
 		282A1BD72295180900B7EF7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 282A1BD62295180900B7EF7B /* GoogleService-Info.plist */; };
 		28481EF32297397300C88B44 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28481EF22297397300C88B44 /* SignUpViewController.swift */; };
+		2893144A2297529800F38A0A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289314492297529800F38A0A /* UserModel.swift */; };
+		2893144C229752A600F38A0A /* LeagueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893144B229752A600F38A0A /* LeagueModel.swift */; };
+		2893144E229752AD00F38A0A /* BetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893144D229752AD00F38A0A /* BetModel.swift */; };
+		28931450229752BC00F38A0A /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893144F229752BC00F38A0A /* NewsModel.swift */; };
 		28D2F6F0228397CC0008ECC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D2F6EF228397CC0008ECC0 /* AppDelegate.swift */; };
 		28D2F6F5228397CC0008ECC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D2F6F3228397CC0008ECC0 /* Main.storyboard */; };
 		28D2F6F7228397CD0008ECC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28D2F6F6228397CD0008ECC0 /* Assets.xcassets */; };
@@ -35,6 +39,10 @@
 		28081C3A228E9B0600F4F22A /* happytests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = happytests.swift; sourceTree = "<group>"; };
 		282A1BD62295180900B7EF7B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28481EF22297397300C88B44 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		289314492297529800F38A0A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		2893144B229752A600F38A0A /* LeagueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueModel.swift; sourceTree = "<group>"; };
+		2893144D229752AD00F38A0A /* BetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetModel.swift; sourceTree = "<group>"; };
+		2893144F229752BC00F38A0A /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		28D2F6EC228397CC0008ECC0 /* happybets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = happybets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28D2F6EF228397CC0008ECC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28D2F6F4228397CC0008ECC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,6 +90,18 @@
 			path = happytests;
 			sourceTree = "<group>";
 		};
+		289314482297526500F38A0A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				47944FEF228E4C79004BD0DE /* AuthenticatorModel.swift */,
+				289314492297529800F38A0A /* UserModel.swift */,
+				2893144B229752A600F38A0A /* LeagueModel.swift */,
+				2893144D229752AD00F38A0A /* BetModel.swift */,
+				2893144F229752BC00F38A0A /* NewsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		28D2F6E3228397CC0008ECC0 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +125,7 @@
 		28D2F6EE228397CC0008ECC0 /* happybets */ = {
 			isa = PBXGroup;
 			children = (
+				289314482297526500F38A0A /* Model */,
 				28D2F6EF228397CC0008ECC0 /* AppDelegate.swift */,
 				28D2F6F3228397CC0008ECC0 /* Main.storyboard */,
 				28E79EA222850B1F00987D8E /* LoginViewController.swift */,
@@ -112,7 +133,6 @@
 				28D2F6F8228397CD0008ECC0 /* LaunchScreen.storyboard */,
 				28D2F6FB228397CD0008ECC0 /* Info.plist */,
 				282A1BD62295180900B7EF7B /* GoogleService-Info.plist */,
-				47944FEF228E4C79004BD0DE /* AuthenticatorModel.swift */,
 				28481EF22297397300C88B44 /* SignUpViewController.swift */,
 			);
 			path = happybets;
@@ -282,9 +302,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28931450229752BC00F38A0A /* NewsModel.swift in Sources */,
+				2893144C229752A600F38A0A /* LeagueModel.swift in Sources */,
 				28E79EA322850B1F00987D8E /* LoginViewController.swift in Sources */,
 				47944FF0228E4C79004BD0DE /* AuthenticatorModel.swift in Sources */,
 				28481EF32297397300C88B44 /* SignUpViewController.swift in Sources */,
+				2893144A2297529800F38A0A /* UserModel.swift in Sources */,
+				2893144E229752AD00F38A0A /* BetModel.swift in Sources */,
 				28D2F6F0228397CC0008ECC0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
