@@ -93,7 +93,7 @@
                     <connections>
                         <outlet property="passText" destination="gMu-t4-F7F" id="gcg-pU-6gM"/>
                         <outlet property="userText" destination="qzc-HE-SNP" id="A5h-GY-Glg"/>
-                        <segue destination="QcI-3O-K2M" kind="showDetail" identifier="toLeagueView" id="xTI-KI-QTo"/>
+                        <segue destination="EZd-E2-bap" kind="show" identifier="toLeagueView" id="N0A-Dk-Bf8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -190,64 +190,95 @@
             </objects>
             <point key="canvasLocation" x="1071.0144927536232" y="109.82142857142857"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Ug7-qF-nHr">
+        <!--Item-->
+        <scene sceneID="Onm-qB-Nfg">
             <objects>
-                <viewController id="QcI-3O-K2M" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Swb-A5-Kt5">
+                <viewController id="vW6-yZ-Xmw" customClass="LeagueViewController" customModule="happybets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ad5-WK-22Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="League View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vgf-PS-YFB">
-                                <rect key="frame" x="158" y="44" width="98" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mvb-4L-isX">
-                                <rect key="frame" x="0.0" y="73" width="414" height="691"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ISa-bI-McI">
+                                <rect key="frame" x="0.0" y="129" width="414" height="684"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="leagueCell" rowHeight="92" id="c69-gQ-LON">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="92"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="71" id="Kzk-1e-OVS">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c69-gQ-LON" id="0SH-qJ-mi4">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="91.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kzk-1e-OVS" id="I4e-wx-75k">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Very Epic League" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6m-o7-5EX">
-                                                    <rect key="frame" x="78" y="24" width="258" height="42"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="udA-BA-2zr">
-                                <rect key="frame" x="0.0" y="764" width="414" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <tabBarItem systemItem="favorites" id="ASY-AR-jer"/>
-                                    <tabBarItem systemItem="more" id="72B-IL-xfZ"/>
-                                </items>
-                            </tabBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Leagues" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52C-KG-eda">
+                                <rect key="frame" x="138" y="57" width="139" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Df1-f7-zj2"/>
+                        <viewLayoutGuide key="safeArea" id="7SK-EL-4cC"/>
                     </view>
-                    <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="4bF-6X-gzY"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OmI-JP-sNw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mpy-Lz-zzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="859.82142857142856"/>
+            <point key="canvasLocation" x="-759.4202898550725" y="1849.5535714285713"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="DXO-6Y-UWb">
+            <objects>
+                <viewController id="Rlm-L2-eoS" customClass="ProfileViewController" customModule="happybets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OtX-8R-4X1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O5g-fR-d54">
+                                <rect key="frame" x="45" y="183" width="146" height="146"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znG-S9-GhN">
+                                <rect key="frame" x="123" y="102" width="168" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="2jx-we-92H"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="a1g-Hs-e0j"/>
+                    <connections>
+                        <outlet property="username" destination="znG-S9-GhN" id="OSQ-kt-kgs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DkV-4B-X5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="1849.5535714285713"/>
+        </scene>
+        <!--Super Tab View Controller-->
+        <scene sceneID="jky-Ht-wWE">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zEi-dr-IHD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController id="EZd-E2-bap" customClass="SuperTabViewController" customModule="happybets" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ehg-4E-aYp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="vW6-yZ-Xmw" kind="relationship" relationship="viewControllers" id="nUs-Ch-8is"/>
+                        <segue destination="Rlm-L2-eoS" kind="relationship" relationship="viewControllers" id="twG-FL-cwK"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="138" y="947"/>
         </scene>
     </scenes>
     <resources>

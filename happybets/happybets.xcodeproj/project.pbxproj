@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28014A88229A747400AED085 /* LeagueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28014A87229A747400AED085 /* LeagueViewController.swift */; };
+		28014A8A229A752F00AED085 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28014A89229A752F00AED085 /* ProfileViewController.swift */; };
+		28014A8E229A762A00AED085 /* SuperTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28014A8D229A762A00AED085 /* SuperTabViewController.swift */; };
+		28014A93229A86F600AED085 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28014A92229A86F600AED085 /* GoogleService-Info.plist */; };
 		28081C3B228E9B0600F4F22A /* happytests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28081C3A228E9B0600F4F22A /* happytests.swift */; };
-		282A1BD72295180900B7EF7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 282A1BD62295180900B7EF7B /* GoogleService-Info.plist */; };
 		28481EF32297397300C88B44 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28481EF22297397300C88B44 /* SignUpViewController.swift */; };
 		2893144A2297529800F38A0A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289314492297529800F38A0A /* UserModel.swift */; };
 		2893144C229752A600F38A0A /* LeagueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893144B229752A600F38A0A /* LeagueModel.swift */; };
@@ -35,9 +38,12 @@
 
 /* Begin PBXFileReference section */
 		22B93BB7FBC59BB24116D67B /* Pods-happybets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-happybets.release.xcconfig"; path = "Pods/Target Support Files/Pods-happybets/Pods-happybets.release.xcconfig"; sourceTree = "<group>"; };
+		28014A87229A747400AED085 /* LeagueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueViewController.swift; sourceTree = "<group>"; };
+		28014A89229A752F00AED085 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		28014A8D229A762A00AED085 /* SuperTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperTabViewController.swift; sourceTree = "<group>"; };
+		28014A92229A86F600AED085 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28081C38228E9B0500F4F22A /* happytests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = happytests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28081C3A228E9B0600F4F22A /* happytests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = happytests.swift; sourceTree = "<group>"; };
-		282A1BD62295180900B7EF7B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28481EF22297397300C88B44 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		289314492297529800F38A0A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		2893144B229752A600F38A0A /* LeagueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueModel.swift; sourceTree = "<group>"; };
@@ -80,6 +86,18 @@
 				8988F4F32B5045740538CE39 /* Pods_happybets.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		28014A86229A722100AED085 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				28481EF22297397300C88B44 /* SignUpViewController.swift */,
+				28E79EA222850B1F00987D8E /* LoginViewController.swift */,
+				28014A87229A747400AED085 /* LeagueViewController.swift */,
+				28014A89229A752F00AED085 /* ProfileViewController.swift */,
+				28014A8D229A762A00AED085 /* SuperTabViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		28081C39228E9B0600F4F22A /* happytests */ = {
@@ -125,15 +143,14 @@
 		28D2F6EE228397CC0008ECC0 /* happybets */ = {
 			isa = PBXGroup;
 			children = (
+				28014A86229A722100AED085 /* ViewController */,
 				289314482297526500F38A0A /* Model */,
 				28D2F6EF228397CC0008ECC0 /* AppDelegate.swift */,
 				28D2F6F3228397CC0008ECC0 /* Main.storyboard */,
-				28E79EA222850B1F00987D8E /* LoginViewController.swift */,
 				28D2F6F6228397CD0008ECC0 /* Assets.xcassets */,
 				28D2F6F8228397CD0008ECC0 /* LaunchScreen.storyboard */,
 				28D2F6FB228397CD0008ECC0 /* Info.plist */,
-				282A1BD62295180900B7EF7B /* GoogleService-Info.plist */,
-				28481EF22297397300C88B44 /* SignUpViewController.swift */,
+				28014A92229A86F600AED085 /* GoogleService-Info.plist */,
 			);
 			path = happybets;
 			sourceTree = "<group>";
@@ -238,7 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28D2F6FA228397CD0008ECC0 /* LaunchScreen.storyboard in Resources */,
-				282A1BD72295180900B7EF7B /* GoogleService-Info.plist in Resources */,
+				28014A93229A86F600AED085 /* GoogleService-Info.plist in Resources */,
 				28D2F6F7228397CD0008ECC0 /* Assets.xcassets in Resources */,
 				28D2F6F5228397CC0008ECC0 /* Main.storyboard in Resources */,
 			);
@@ -256,12 +273,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-happybets/Pods-happybets-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,8 +323,11 @@
 			files = (
 				28931450229752BC00F38A0A /* NewsModel.swift in Sources */,
 				2893144C229752A600F38A0A /* LeagueModel.swift in Sources */,
+				28014A8A229A752F00AED085 /* ProfileViewController.swift in Sources */,
 				28E79EA322850B1F00987D8E /* LoginViewController.swift in Sources */,
+				28014A8E229A762A00AED085 /* SuperTabViewController.swift in Sources */,
 				47944FF0228E4C79004BD0DE /* AuthenticatorModel.swift in Sources */,
+				28014A88229A747400AED085 /* LeagueViewController.swift in Sources */,
 				28481EF32297397300C88B44 /* SignUpViewController.swift in Sources */,
 				2893144A2297529800F38A0A /* UserModel.swift in Sources */,
 				2893144E229752AD00F38A0A /* BetModel.swift in Sources */,

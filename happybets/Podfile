@@ -8,6 +8,7 @@ target 'happybets' do
   # Pods for happybets
 pod 'Firebase/Core'
 pod 'Firebase/Analytics'
+pod 'Firebase/Database'
 pod 'Firebase/Auth'
 
 end

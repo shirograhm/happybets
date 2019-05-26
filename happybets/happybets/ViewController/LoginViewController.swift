@@ -14,8 +14,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userText: UITextField!
     @IBOutlet weak var passText: UITextField!
     
-    var uIDToSend: String!
-    
     @IBAction func attemptLogin(_ sender: UIButton) {
         print(userText.text! + " " + passText.text!)
         AuthenticatorModel.login(withEmail: userText.text ?? "", password: passText.text ?? "", getUser)
@@ -24,7 +22,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     public func getUser(_ result: AuthDataResult?) {
         if let newID = result?.user.uid {
             // Successfully logged in
-            uIDToSend = newID
             performSegue(withIdentifier: "toLeagueView", sender: self)
         } else {
             let badLoginAlert = UIAlertController(title: "Failed Login", message: "Invalid email and/or password.", preferredStyle: .alert)
@@ -59,7 +56,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
         if segue.identifier == "toLeagueView" {
             // Do stuff to get to league view
-
+            let tabbar = dest as! SuperTabViewController
         }
         
         if segue.identifier == "toSignUp" {
