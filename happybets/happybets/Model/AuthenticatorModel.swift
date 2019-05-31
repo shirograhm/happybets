@@ -13,7 +13,7 @@ class AuthenticatorModel {
     
     public static func createUser(email: String, password: String, _ callback: ((Error?) -> ())? = nil) {
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-            if let e = error{
+            if let e = error {
                 callback?(e)
                 return
             }
@@ -31,7 +31,7 @@ class AuthenticatorModel {
         }
     }
     
-    public static func signOut() -> Bool{
+    public static func signOut() -> Bool {
         do{
             try Auth.auth().signOut()
             return true
@@ -40,7 +40,7 @@ class AuthenticatorModel {
         }
     }
     
-    public static func reloadUser(_ callback: ((Error?) -> ())? = nil){
+    public static func reloadUser(_ callback: ((Error?) -> ())? = nil) {
         Auth.auth().currentUser?.reload(completion: { (error) in
             callback?(error)
         })
