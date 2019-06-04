@@ -10,4 +10,8 @@ import Foundation
 
 class BetModel {
     
+    func storeBet() {
+        
+    }
+    
 }

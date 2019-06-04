@@ -8,7 +8,9 @@
 
 import UIKit
 
-class LeagueViewController: UIViewController {
+class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +18,15 @@ class LeagueViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // MARK: - Table View DataSource Methods
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
 
     /*
     // MARK: - Navigation
