@@ -167,15 +167,33 @@
             <point key="canvasLocation" x="1071.0144927536232" y="109.82142857142857"/>
         </scene>
         <!--Item-->
+        <scene sceneID="gWj-aL-4vv">
+            <objects>
+                <navigationController id="zi3-Oz-HSl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="SLT-QJ-qLU"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2fX-D8-PzG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vW6-yZ-Xmw" kind="relationship" relationship="rootViewController" id="uoZ-O3-jgw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PrR-wi-ZB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-759" y="1850"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="Onm-qB-Nfg">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mpy-Lz-zzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="vW6-yZ-Xmw" customClass="LeagueViewController" customModule="happybets" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ad5-WK-22Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ISa-bI-McI">
-                                <rect key="frame" x="0.0" y="398" width="414" height="415"/>
+                                <rect key="frame" x="0.0" y="242" width="414" height="571"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -191,6 +209,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vW6-yZ-Xmw" id="BdI-3e-jWq"/>
+                                    <outlet property="delegate" destination="vW6-yZ-Xmw" id="bkW-sR-c45"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Leagues" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52C-KG-eda">
                                 <rect key="frame" x="138" y="103" width="139" height="46"/>
@@ -204,10 +226,13 @@
                         <viewLayoutGuide key="safeArea" id="7SK-EL-4cC"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="4bF-6X-gzY"/>
+                    <navigationItem key="navigationItem" id="KtI-uj-rew"/>
+                    <connections>
+                        <outlet property="tableView" destination="ISa-bI-McI" id="oGd-wV-a1D"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mpy-Lz-zzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-759.4202898550725" y="1849.5535714285713"/>
+            <point key="canvasLocation" x="-759" y="2578"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xeo-1s-scC">
@@ -231,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tCT-o9-Ule" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-759" y="2823"/>
+            <point key="canvasLocation" x="-759" y="3323"/>
         </scene>
         <!--Item-->
         <scene sceneID="DXO-6Y-UWb">
@@ -300,9 +325,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="vW6-yZ-Xmw" kind="relationship" relationship="viewControllers" id="nUs-Ch-8is"/>
                         <segue destination="Rlm-L2-eoS" kind="relationship" relationship="viewControllers" id="twG-FL-cwK"/>
                         <segue destination="kYs-mG-NfS" kind="relationship" relationship="viewControllers" id="BhR-mb-sWx"/>
+                        <segue destination="zi3-Oz-HSl" kind="relationship" relationship="viewControllers" id="yws-Eo-5rS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zEi-dr-IHD" userLabel="First Responder" sceneMemberID="firstResponder"/>

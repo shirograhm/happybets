@@ -10,4 +10,12 @@ import Foundation
 
 class LeagueModel {
     
+    func storeLeague() {
+        
+    }
+    
+    func createBet() {
+        
+    }
+    
 }

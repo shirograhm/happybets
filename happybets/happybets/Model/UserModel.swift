@@ -10,4 +10,28 @@ import Foundation
 
 class UserModel {
     
+    func storeUser() {
+        
+    }
+    
+    func loginUser() {
+        
+    }
+    
+    func createLeague() {
+        
+    }
+    
+    func joinLeague() {
+        
+    }
+    
+    func requestArticles() {
+        
+    }
+    
+    func viewSingleArticle() {
+        
+    }
+    
 }
