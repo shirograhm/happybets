@@ -285,7 +285,6 @@
         <!--Navigation Controller-->
         <scene sceneID="aYX-DI-mNh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4d0-qi-CNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="9aG-76-sLy" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VLC-Xa-BVE">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -295,6 +294,7 @@
                         <segue destination="Vxb-Jc-JG9" kind="relationship" relationship="rootViewController" id="QrY-u7-LkM"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4d0-qi-CNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1675" y="2592"/>
         </scene>

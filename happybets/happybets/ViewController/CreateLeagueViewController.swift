@@ -16,8 +16,6 @@ class CreateLeagueViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
     
     // MARK: - TextField Functions
@@ -45,6 +43,7 @@ class CreateLeagueViewController: UIViewController, UITextFieldDelegate {
     
     //Checks whether league should be created or not (all fields have been entered in data)
     func checkDone() -> Bool {
+        //Add more conditionals here if there are more desired user-input LeagueModel properties
         if name != nil {
             return true
         }

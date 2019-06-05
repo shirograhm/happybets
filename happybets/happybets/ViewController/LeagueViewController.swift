@@ -47,6 +47,7 @@ class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //Pass through selected League here (for join League)
     }
     
+    //Adds a newly created league to Firebase and the TableView
     func addLeague(league: LeagueModel) {
         league.storeLeague()
         leagueList.append(league)
@@ -54,7 +55,7 @@ class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func loadAllLeagues() {
-        //Should get all of the League data from Firebase into leagueList
+        // TODO: Should get all of the League data from Firebase into leagueList
     }
 
 }

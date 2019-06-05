@@ -11,11 +11,15 @@ import Foundation
 class LeagueModel {
     
     var name: String
-    var members = [UserModel]()
+    var admins = [UserModel]()
+    var members = [UserModel : Int]()
+    var bets = [BetModel]()
     
     init(name: String, user: UserModel) {
+        //The user who created the League will be the first member and admin
         self.name = name
-        self.members.append(user)
+        self.members.updateValue(100, forKey: user)
+        self.admins.append(user)
     }
     
     func storeLeague() {
