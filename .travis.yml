@@ -1,0 +1,9 @@
+osx_image: xcode10.2
+
+
+language: swift
+xcode_workspace: happybets/happybets.xcworkspace # path to your xcodeproj folder
+xcode_scheme: happybets
+xcode_destination: platform=iOS Simulator,OS=12.2,name=iPhone X
+xcode_sdk: iphonesimulator12.2
+podfile: happybets/Podfile
