@@ -11,6 +11,9 @@ import Firebase
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
+    //Needs to be init somewhere her
+    var user = UserModel()
+    
     @IBOutlet weak var userText: UITextField!
     @IBOutlet weak var passText: UITextField!
     

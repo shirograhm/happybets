@@ -10,6 +10,8 @@ import Foundation
 
 class UserModel {
     
+    var leagues = [String : LeagueModel]()
+    
     func storeUser() {
         
     }
@@ -18,8 +20,9 @@ class UserModel {
         
     }
     
-    func createLeague() {
-        
+    func createLeague(name: String) {
+        let league = LeagueModel(name: name, user: self)
+        leagues.updateValue(league, forKey: league.name)
     }
     
     func joinLeague() {
