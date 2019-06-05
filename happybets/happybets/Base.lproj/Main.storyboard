@@ -149,7 +149,8 @@
                                     <color key="titleColor" name="clean_forest"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Qn3-re-SUl"/>
+                                    <action selector="loginButtonPressed:" destination="cwZ-Su-j0c" eventType="touchUpInside" id="OOg-Ut-g4s"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="toLogin" id="Qn3-re-SUl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -186,7 +187,6 @@
         <!--Item-->
         <scene sceneID="Onm-qB-Nfg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mpy-Lz-zzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="vW6-yZ-Xmw" customClass="LeagueViewController" customModule="happybets" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ad5-WK-22Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -205,7 +205,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="TgT-kQ-HzY" kind="show" id="WuM-ME-DaA"/>
+                                            <segue destination="TgT-kQ-HzY" kind="show" identifier="showLeagueDetail" id="WuM-ME-DaA"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -231,6 +231,7 @@
                         <outlet property="tableView" destination="ISa-bI-McI" id="oGd-wV-a1D"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mpy-Lz-zzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-759" y="2578"/>
         </scene>
