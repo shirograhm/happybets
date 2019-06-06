@@ -10,6 +10,14 @@ import Foundation
 
 class LeagueModel {
     
+    var name: String
+    var members = [UserModel]()
+    
+    init(name: String, user: UserModel) {
+        self.name = name
+        self.members.append(user)
+    }
+    
     func storeLeague() {
         
     }
