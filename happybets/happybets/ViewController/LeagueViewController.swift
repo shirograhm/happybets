@@ -21,11 +21,11 @@ class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // MARK: - Table View DataSource Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        return UITableViewCell()
     }
 
     /*

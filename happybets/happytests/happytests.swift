@@ -38,4 +38,6 @@ class happytests: XCTestCase {
             print(String(z) + " is a cool number!")
         }
     }
+    
+    
 }
