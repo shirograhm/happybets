@@ -149,7 +149,8 @@
                                     <color key="titleColor" name="clean_forest"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Qn3-re-SUl"/>
+                                    <action selector="loginButtonPressed:" destination="cwZ-Su-j0c" eventType="touchUpInside" id="OOg-Ut-g4s"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="toLogin" id="Qn3-re-SUl"/>
                                 </connections>
                             </button>
                         </subviews>
