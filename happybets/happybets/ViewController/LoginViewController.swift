@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
+    var emailFromSignUp: String!
+    //Needs to be init somewhere her
     
     @IBOutlet weak var userText: UITextField!
     @IBOutlet weak var passText: UITextField!
@@ -38,6 +40,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         userText.delegate = self
         passText.delegate = self
+        userText.text = emailFromSignUp
         // Do any additional setup after loading the view.
     }
     
