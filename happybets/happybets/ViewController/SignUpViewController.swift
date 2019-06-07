@@ -23,12 +23,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             badSignUpAlert.addAction(UIAlertAction(title: "Got it", style: .cancel))
             self.present(badSignUpAlert, animated: true, completion: nil)
         }
-//        else if (!(newPass.text?.contains("1234567890!@#$%^&*()") ?? false) || newPass.text?.count ?? 0 < 8) {
-//            let badSignUpAlert = UIAlertController(title: "Failed Sign Up", message: "Passwords must be 8 characters long and contain a number and at least one of the following symbols: !@#$%^&*()", preferredStyle: .alert)
-//            badSignUpAlert.addAction(UIAlertAction(title: "Got it", style: .cancel))
-//            self.present(badSignUpAlert, animated: true, completion: nil)
-//        }
-        else {
+       else if (!(newPass.text?.contains("1234567890!@#$%^&*()") ?? false) || newPass.text?.count ?? 0 < 8) {
+           let badSignUpAlert = UIAlertController(title: "Failed Sign Up", message: "Passwords must be 8 characters long and contain a number and at least one of the following symbols: !@#$%^&*()", preferredStyle: .alert)
+           badSignUpAlert.addAction(UIAlertAction(title: "Got it", style: .cancel))
+           self.present(badSignUpAlert, animated: true, completion: nil)
+       }
+       else {
             AuthenticatorModel.createUser(email: newEmail.text ?? "", password: newPass.text ?? "", registerUser)
         }
     }

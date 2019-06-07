@@ -37,7 +37,6 @@ class UserModel {
                 completion(true, code)
             }
         }
-    }
     
     // join a league with a code -> success or failure
     func joinLeague(code:Int, completion: @escaping (_ success: Bool) -> Void){
