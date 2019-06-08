@@ -36,7 +36,7 @@ class CreateLeagueViewController: UIViewController, UITextFieldDelegate {
             if button.title == "Save" && checkDone() {
                 //Creates league when saved and when all fields are entered
                 let destVC = segue.destination as! LeagueViewController
-//                destVC.user!.createLeague(name: name!)
+                destVC.user!.createLeague(name: name!)
                 //Updates League Overview
                 destVC.addLeague(league: destVC.user!.leagues[name!]!)
             }

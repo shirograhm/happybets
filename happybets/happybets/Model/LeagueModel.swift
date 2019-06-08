@@ -39,8 +39,7 @@ class LeagueModel {
             
         }
     }
-    
-    
+
     func storeLeague() {
         
     }

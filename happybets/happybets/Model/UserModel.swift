@@ -18,6 +18,7 @@ class UserModel {
     var password:String!
     var uid:String!
     var leagues = [String : LeagueModel]()
+
     
     // private initializer
     private init(){}
@@ -58,7 +59,6 @@ class UserModel {
         
         
     }
-    
     // join a league with a code -> success or failure
     func joinLeague(code:Int, completion: @escaping (_ success: Bool) -> Void){
         print("checking for code \(code)")
@@ -118,7 +118,6 @@ class UserModel {
                 completion(false)
             }
         }
-    }
     
     // returns the leagues that a user is in
     // the leagues returned don't have the users loaded,
