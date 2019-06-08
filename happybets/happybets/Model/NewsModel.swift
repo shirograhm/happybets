@@ -10,7 +10,7 @@ import Foundation
 
 class NewsModel {
     func retrieveArticles(){
-        let todoEndpoint: String = "https://jsonplaceholder.typicode.com/todos/1"
+        let todoEndpoint: String = createUrl()
         guard let url = URL(string: todoEndpoint) else {
             print("Error: cannot create URL")
             return
@@ -59,6 +59,26 @@ class NewsModel {
             }
         }
         task.resume()
+    }
+    
+    func createUrl() -> String {
+        var url = "https://eventregistry.org/api/v1/article/getArticles?query=%7B%22%24query%22%3A%7B%22%24and%22%3A%5B%7B%22conceptUri%22%3A%22http%3A%2F%2Fen.wikipedia.org%2Fwiki%2FNBA_Finals%22%7D%2C%7B%22categoryUri%22%3A%22dmoz%2FSports%2FBasketball%2FProfessional%22%7D%2C%7B%22%24or%22%3A%5B%7B%22sourceUri%22%3A%22espn.com%22%7D%5D%7D%2C%7B%22dateStart%22%3A%22"
         
+        var date = Date()
+        let formatter = DateFormatter()
+        
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        let endDate = formatter.string(from: date)
+        
+        date = date - 604800
+        
+        let startDate = formatter.string(from: date)
+        
+        print(startDate)
+        print(endDate)
+        
+        url = url + startDate + "%22%2C%22dateEnd%22%3A%22" + endDate + "%22%2C%22lang%22%3A%22eng%22%7D%5D%7D%7D&dataType=news&resultType=articles&articlesSortBy=rel&articlesCount=10&articleBodyLen=-1&apiKey=de25d70a-1050-41dd-baf0-8e13ba47a6c3&"
+        return url
     }
 }
