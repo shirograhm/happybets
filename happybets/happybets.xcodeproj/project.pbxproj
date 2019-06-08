@@ -23,6 +23,7 @@
 		28D2F6FA228397CD0008ECC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D2F6F8228397CD0008ECC0 /* LaunchScreen.storyboard */; };
 		28E79EA322850B1F00987D8E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E79EA222850B1F00987D8E /* LoginViewController.swift */; };
 		47944FF0228E4C79004BD0DE /* AuthenticatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47944FEF228E4C79004BD0DE /* AuthenticatorModel.swift */; };
+		701CBAC822AB389200FA04B8 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701CBAC722AB389200FA04B8 /* NewsViewController.swift */; };
 		793A7D8022A64343000EF12D /* LeagueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793A7D7F22A64343000EF12D /* LeagueCell.swift */; };
 		793A7D8222A64545000EF12D /* CreateLeagueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793A7D8122A64545000EF12D /* CreateLeagueViewController.swift */; };
 		EFAED7F24A0C5107D8D378E9 /* Pods_happybets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8988F4F32B5045740538CE39 /* Pods_happybets.framework */; };
@@ -59,6 +60,7 @@
 		28D2F6FB228397CD0008ECC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28E79EA222850B1F00987D8E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		47944FEF228E4C79004BD0DE /* AuthenticatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorModel.swift; sourceTree = "<group>"; };
+		701CBAC722AB389200FA04B8 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		793A7D7F22A64343000EF12D /* LeagueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueCell.swift; sourceTree = "<group>"; };
 		793A7D8122A64545000EF12D /* CreateLeagueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLeagueViewController.swift; sourceTree = "<group>"; };
 		8988F4F32B5045740538CE39 /* Pods_happybets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_happybets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +99,7 @@
 			children = (
 				28481EF22297397300C88B44 /* SignUpViewController.swift */,
 				28E79EA222850B1F00987D8E /* LoginViewController.swift */,
+				701CBAC722AB389200FA04B8 /* NewsViewController.swift */,
 				28014A87229A747400AED085 /* LeagueViewController.swift */,
 				793A7D8122A64545000EF12D /* CreateLeagueViewController.swift */,
 				28014A89229A752F00AED085 /* ProfileViewController.swift */,
@@ -346,6 +349,7 @@
 				28481EF32297397300C88B44 /* SignUpViewController.swift in Sources */,
 				2893144A2297529800F38A0A /* UserModel.swift in Sources */,
 				2893144E229752AD00F38A0A /* BetModel.swift in Sources */,
+				701CBAC822AB389200FA04B8 /* NewsViewController.swift in Sources */,
 				793A7D8022A64343000EF12D /* LeagueCell.swift in Sources */,
 				28D2F6F0228397CC0008ECC0 /* AppDelegate.swift in Sources */,
 			);
