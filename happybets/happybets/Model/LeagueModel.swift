@@ -7,16 +7,39 @@
 //
 
 import Foundation
+import Firebase
 
 class LeagueModel {
     
     var name: String
+    var uid: String
+    var code: Int
     var members = [UserModel]()
-    
-    init(name: String, user: UserModel) {
+    var ref: DatabaseReference = Database.database().reference()
+
+    init(name: String, uid:String, code:Int) {
         self.name = name
-        self.members.append(user)
+        self.uid = uid
+        self.code = code
     }
+    
+    // pulls the mambers of a league from the database
+    func populateMembers(completion: @escaping (_ success:Bool) -> Void){
+        let usersRef = self.ref.child("leagues").child(self.uid).child("users")
+        
+        usersRef.observeSingleEvent(of: .value) { (snapshot) in
+            let userData = snapshot.value! as! [[String:Any]]
+            
+            for singleUserData in userData{
+                let userModel = UserModel(email: singleUserData["email"] as! String, uid: singleUserData["uid"] as! String)
+                self.members.append(userModel)
+            }
+            
+            completion(true)
+            
+        }
+    }
+    
     
     func storeLeague() {
         

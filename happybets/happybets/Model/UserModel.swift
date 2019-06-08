@@ -16,10 +16,16 @@ class UserModel {
     var ref: DatabaseReference = Database.database().reference()
     var email:String!
     var password:String!
+    var uid:String!
     var leagues = [String : LeagueModel]()
     
     // private initializer
     private init(){}
+    
+    init(email:String, uid:String){
+        self.email = email
+        self.uid = uid
+    }
 
     // returns with success and the code of the league that was created
     func createLeague(name:String, completion: @escaping (_ code: Bool, _ leagueCode:Int?) -> Void) {
@@ -30,13 +36,27 @@ class UserModel {
         self.ref.child("leagues").childByAutoId().setValue(data){
             (error:Error?, ref:DatabaseReference) in
             if let error = error {
+                
                 print("Data could not be saved: \(error).")
                 completion(false, nil)
             } else {
-                print("Data saved successfully!")
-                completion(true, code)
+                
+                let leagueDict = [ref.key!:["name":name, "uid":ref.key!, "code":code]] as [String : Any]
+                
+                self.ref.child("users").child(Auth.auth().currentUser!.uid).child("leagues").updateChildValues(leagueDict, withCompletionBlock: { (userErr, userRef) in
+                if let userErr = userErr {
+                    print("Data could not be saved: \(userErr).")
+                    completion(false, nil)
+                } else {
+                    print("Data saved successfully!")
+                    completion(true, code)
+                }
+            })
+           
             }
         }
+        
+        
     }
     
     // join a league with a code -> success or failure
@@ -68,7 +88,7 @@ class UserModel {
                 //add the user to the league's user list
                 usersData.append(self.getUserInfoDictionary())
                 
-                let data:[String:Any] = ["name":foundValue!["name"] as! String, "code":foundValue!["code"], "users":usersData]
+                let data:[String:Any] = ["name":foundValue!["name"] as! String, "code":foundValue!["code"]!, "users":usersData]
                 
                 self.ref.child("leagues").child(foundKey!).setValue(data){
                     (error:Error?, ref:DatabaseReference) in
@@ -76,8 +96,20 @@ class UserModel {
                         print("Data could not be saved: \(error).")
                         completion(false)
                     } else {
-                        print("Data saved successfully!")
-                        completion(true)
+                        
+                        let name = foundValue!["name"] as! String
+                        let foundCode = foundValue!["code"] as! String
+                        
+                        let leagueDict = [foundKey!:["name":name, "uid":foundKey!, "code":foundCode]] as [String : Any]
+ self.ref.child("users").child(Auth.auth().currentUser!.uid).child("leagues").updateChildValues(leagueDict, withCompletionBlock: { (userErr, userRef) in
+                            if let userErr = userErr {
+                                print("Data could not be saved: \(userErr).")
+                                completion(false)
+                            } else {
+                                print("Data saved successfully!")
+                                completion(true)
+                            }
+                        })
                     }
                 }
                 
@@ -88,8 +120,31 @@ class UserModel {
         }
     }
     
+    // returns the leagues that a user is in
+    // the leagues returned don't have the users loaded,
+    // this requires another DB call
+    func getLeagues(completion: @escaping (_ leagues: [LeagueModel]) -> Void){
+        
+        let leaguesRef = self.ref.child("users").child(Auth.auth().currentUser!.uid).child("leagues")
+        
+        leaguesRef.observeSingleEvent(of: .value) { (snapshot) in
+            let leagues = snapshot.value! as! [String:[String:Any]]
+            
+            var leagueModels = [LeagueModel]()
+            for (key, value) in leagues{
+                
+                let leagueModel =  LeagueModel(name: value["name"] as! String, uid: key, code: value["code"] as! Int)
+                leagueModels.append(leagueModel)
+
+            }
+            
+            completion(leagueModels)
+            
+        }
+    }
+    
     func getUserInfoDictionary() -> [String:Any]{
-        return ["email":Auth.auth().currentUser!.email, "uid":Auth.auth().currentUser!.uid]
+        return ["email":Auth.auth().currentUser!.email!, "uid":Auth.auth().currentUser!.uid]
     }
     
     func generateCode() -> Int{
