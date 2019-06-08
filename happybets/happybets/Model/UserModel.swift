@@ -8,7 +8,7 @@
 import Foundation
 import Firebase
 
-class UserModel {
+class UserModel: Hashable {
     
     // user singleton
     static var sharedUserModel = UserModel()
@@ -142,7 +142,7 @@ class UserModel {
     }
     
     func getUserInfoDictionary() -> [String:Any]{
-        return ["email":Auth.auth().currentUser!.email!, "uid":Auth.auth().currentUser!.uid]
+        return ["email":Auth.auth().currentUser!.email!, "uid":Auth.auth().currentUser!.uid, "points":100]
     }
     
     func generateCode() -> Int{
@@ -152,6 +152,16 @@ class UserModel {
             result = String(format:"%04d", arc4random_uniform(10000) )
         } while result.count < 4
         return Int(result)!
+    }
+    
+    // MARK: - Hashable functions
+    
+    static func == (lhs: UserModel, rhs: UserModel) -> Bool {
+        return lhs.uid == rhs.uid
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(uid)
     }
     
 }
