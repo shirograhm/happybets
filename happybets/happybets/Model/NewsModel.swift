@@ -9,6 +9,7 @@
 import Foundation
 
 class NewsModel {
+    
     func retrieveArticles(){
         let todoEndpoint: String = createUrl()
         guard let url = URL(string: todoEndpoint) else {
@@ -16,8 +17,6 @@ class NewsModel {
             return
         }
         let urlRequest = URLRequest(url: url)
-        
-        print(urlRequest.url)
         
         let session = URLSession.shared
         
@@ -36,29 +35,37 @@ class NewsModel {
             }
             // parse the result as JSON, since that's what the API provides
             do {
-                guard let todo = try JSONSerialization.jsonObject(with: responseData, options: [])
-                    as? [String: Any] else {
+                guard let jsonResponse = try JSONSerialization.jsonObject(with: responseData, options: [])
+                    as? [String: [String:Any]] else {
                         print("error trying to convert data to JSON")
                         return
                 }
-                // now we have the todo
-                // let's just print it to prove we can access it
-                print("The todo is: " + todo.description)
+                
                 
                 // the todo object is a dictionary
                 // so we just access the title using the "title" key
                 // so check for a title and print it if we have one
-                guard let todoTitle = todo["title"] as? String else {
+                /*guard let todoTitle = jsonResponse["title"] as? String else {
                     print("Could not get todo title from JSON")
                     return
-                }
-                print("The title is: " + todoTitle)
+                }*/
+                
+                self.parseJsonFile(json:jsonResponse)
             } catch  {
                 print("error trying to convert data to JSON")
                 return
             }
         }
         task.resume()
+    }
+    
+    func parseJsonFile(json : [String: [String:Any]]) -> ([String],[String]) {
+        var articleTitles : [String] = []
+        var articleBodies : [String] = []
+        
+        print(json["articles"])
+        
+        return (articleTitles,articleBodies)
     }
     
     func createUrl() -> String {
