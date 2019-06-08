@@ -118,6 +118,7 @@ class UserModel {
                 completion(false)
             }
         }
+    }
     
     // returns the leagues that a user is in
     // the leagues returned don't have the users loaded,
@@ -131,10 +132,8 @@ class UserModel {
             
             var leagueModels = [LeagueModel]()
             for (key, value) in leagues{
-                
                 let leagueModel =  LeagueModel(name: value["name"] as! String, uid: key, code: value["code"] as! Int)
                 leagueModels.append(leagueModel)
-
             }
             
             completion(leagueModels)

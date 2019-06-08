@@ -23,7 +23,7 @@ class ProfileViewController: UIViewController {
         ref = Database.database().reference()
         
         loadUserData()
-        
+                
         UserModel.sharedUserModel.getLeagues { (leagues) in
             //
             for league in leagues{
