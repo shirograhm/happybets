@@ -19,16 +19,6 @@ class happytests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testCreateLeague(){
-        
-        FirebaseApp.configure()
-        
-        UserModel.sharedUserModel.createLeague(name: "First League") { (success) in
-            // maybe succeeded
-        }
-        XCTAssert(1 + 1 == 2)
-    }
-
     func testEasyNumbers() {
         XCTAssert(1 + 1 == 2)
         XCTAssertFalse(1 + 3 < -10)
