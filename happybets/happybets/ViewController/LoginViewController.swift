@@ -16,6 +16,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userText: UITextField!
     @IBOutlet weak var passText: UITextField!
     
+    var ref : DatabaseReference!
+    var databaseHandle : DatabaseHandle?
+    
     @IBAction func attemptLogin(_ sender: UIButton) {
         print(userText.text! + " " + passText.text!)
         AuthenticatorModel.login(withEmail: userText.text ?? "", password: passText.text ?? "", getUser)
@@ -41,6 +44,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         userText.delegate = self
         passText.delegate = self
         userText.text = emailFromSignUp
+        ref = Database.database().reference()
         // Do any additional setup after loading the view.
     }
     

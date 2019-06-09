@@ -38,6 +38,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             let badSignUpAlert = UIAlertController(title: "Failed Sign Up", message: error.debugDescription, preferredStyle: .alert)
             badSignUpAlert.addAction(UIAlertAction(title: "Got it", style: .cancel))
             self.present(badSignUpAlert, animated: true, completion: nil)
+            
         } else {
             // Successfully registered
             let goodSignUpAlert = UIAlertController(title: "Successful Sign Up", message: "Click Login", preferredStyle: .alert)
