@@ -38,8 +38,12 @@ class LeagueDetailViewController: UIViewController, UITableViewDelegate, UITable
         betTableView.dataSource = self
         
         ref = Database.database().reference()
-        loadAllPlayers(completion: reload)
-        playerTableData.sort(by: compareUserModel())
+        loadAllPlayers(completion: reloadLeaderboard)
+        playerTableData.sort(by: compareUserModel)
+        loadPlayersBets(completion: reloadBets)
+        loadAllGames {
+            print("success")
+        }
         // get data from firebase and fill tables
     }
     
@@ -111,7 +115,7 @@ class LeagueDetailViewController: UIViewController, UITableViewDelegate, UITable
         playersRef.observe(.childAdded, with: { (snapshot) in
             if let playersData = snapshot.value as? [Int:[String:Any]] {
                 for (key, value) in playersData {
-                    self.playerTableData.append(UserModel(email: value["email"] as! String, uid: value["uid"] as! String, points: value["points"] as! Int)
+                    self.playerTableData.append(UserModel(email: value["email"] as! String, uid: value["uid"] as! String, points: value["points"] as! Int))
                 }
                 completion()
             }
@@ -124,7 +128,7 @@ class LeagueDetailViewController: UIViewController, UITableViewDelegate, UITable
         gamesRef.observeSingleEvent(of: .value) { (snapshot) in
             if let gamesData = snapshot.value as? [Int:[String:Any]] {
                 for (key, value) in gamesData {
-                    self.leagueList.append(GameModel(gameID: value["gameID"] as! String, home: value["home"] as! String, away: value["away"])
+                    self.leagueList.append(GameModel(gameID: value["gameID"] as! String, home: value["home"] as! String, away: value["away"]))
                 }
                 completion()
             }
@@ -137,8 +141,8 @@ class LeagueDetailViewController: UIViewController, UITableViewDelegate, UITable
         betsRef.observe(.childAdded, with: { (snapshot) in
             if let betsData = snapshot.value as? [Int:[String:Any]] {
                 for (key, value) in betsData {
-                    if (value["uid"] == Auth.auth().currentUser!.uid) {
-                        self.betTableData.append(BetModel(gameID: value["gameID"] as! int, homer: value["homer"] as! Bool, pointAMT: value["pointAMT"] as! Int, uid: value["uid"] as! String, win: value["win"] as! String))
+                    if (value["uid"] as! String == Auth.auth().currentUser!.uid) {
+                        self.betTableData.append(BetModel(gameID: value["gameID"] as! Int, homer: value["homer"] as! Bool, pointAMT: value["pointAMT"] as! Int, uid: value["uid"] as! String, win: value["win"] as! String))
                     }
                 }
                 completion()
@@ -146,8 +150,12 @@ class LeagueDetailViewController: UIViewController, UITableViewDelegate, UITable
         })
     }
     
-    func reload() {
-        tableView.reloadData()
+    func reloadLeaderboard() {
+        playerTableView.reloadData()
+    }
+    
+    func reloadBets() {
+        betTableView.reloadData()
     }
     
 }
