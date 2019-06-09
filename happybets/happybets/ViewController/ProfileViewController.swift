@@ -11,51 +11,44 @@ import FirebaseDatabase
 import FirebaseAuth
 import Firebase
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet weak var username: UILabel!
+    @IBOutlet var emailLabel: UILabel!
+    @IBOutlet var pointsLabel: UILabel!
+    @IBOutlet var tableView: UITableView!
     
     var ref: DatabaseReference!
+    var leagueModels = [LeagueModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         ref = Database.database().reference()
         
-        loadUserData()
-                
+        self.emailLabel.text = Auth.auth().currentUser!.email!
+        
         UserModel.sharedUserModel.getLeagues { (leagues) in
             //
-            for league in leagues{
-                print(league.name)
-                league.populateMembers(completion: { (success) in
-                    for member in league.members.keys {
-                        print(member.email)
-                    }
-                })
+            self.leagueModels = leagues
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
         }
-
-
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let league = leagueModels[indexPath.row]
+        
+        let cell = UITableViewCell()
+        cell.textLabel?.text = league.name
+        cell.detailTextLabel?.text = String(league.code)
+        
+        return cell
     }
     
-    func loadUserData() {
-        if let userID = Auth.auth().currentUser?.uid {
-            ref.child("users").child(userID).observe(.value, with: { (snapshot) in
-                print(snapshot)
-            })
-        }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return leagueModels.count
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
