@@ -64,12 +64,9 @@
 		28E79EA222850B1F00987D8E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2B187E863B1883313AE1C2F1 /* Pods-happytests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-happytests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-happytests/Pods-happytests.debug.xcconfig"; sourceTree = "<group>"; };
 		47944FEF228E4C79004BD0DE /* AuthenticatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorModel.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		701CBAC722AB389200FA04B8 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
-=======
 		6227BA5225B16C85768728EC /* Pods-happytests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-happytests.release.xcconfig"; path = "Pods/Target Support Files/Pods-happytests/Pods-happytests.release.xcconfig"; sourceTree = "<group>"; };
 		6F0E58CB884C003CDDF5BEDD /* Pods_happytests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_happytests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
->>>>>>> master
 		793A7D7F22A64343000EF12D /* LeagueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueCell.swift; sourceTree = "<group>"; };
 		793A7D8122A64545000EF12D /* CreateLeagueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLeagueViewController.swift; sourceTree = "<group>"; };
 		8988F4F32B5045740538CE39 /* Pods_happybets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_happybets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
