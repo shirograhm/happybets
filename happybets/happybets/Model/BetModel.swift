@@ -7,11 +7,15 @@
 //
 
 import Foundation
+import Firebase
 
 class BetModel {
     
-    func storeBet() {
-        
+    public static func storeBet(pts: Int, uID: String, gm: GameModel, tm1: Bool) {
+        // TODO: Store bet into firebase
+        print(pts)
+        print(uID)
+        print(gm)
+        print(tm1)
     }
-    
 }

@@ -12,6 +12,10 @@
 		28014A8E229A762A00AED085 /* SuperTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28014A8D229A762A00AED085 /* SuperTabViewController.swift */; };
 		28014A93229A86F600AED085 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28014A92229A86F600AED085 /* GoogleService-Info.plist */; };
 		28081C3B228E9B0600F4F22A /* happytests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28081C3A228E9B0600F4F22A /* happytests.swift */; };
+		283D336422ACA30400C3BDE7 /* PlaceBetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283D336322ACA30400C3BDE7 /* PlaceBetViewController.swift */; };
+		283D336622ACA65300C3BDE7 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283D336522ACA65300C3BDE7 /* GameModel.swift */; };
+		283D336822ACA94900C3BDE7 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283D336722ACA94900C3BDE7 /* GameTableViewCell.swift */; };
+		283D336A22ACA98600C3BDE7 /* ChooseGameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283D336922ACA98600C3BDE7 /* ChooseGameTableViewController.swift */; };
 		28481EF32297397300C88B44 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28481EF22297397300C88B44 /* SignUpViewController.swift */; };
 		2893144A2297529800F38A0A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289314492297529800F38A0A /* UserModel.swift */; };
 		2893144C229752A600F38A0A /* LeagueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893144B229752A600F38A0A /* LeagueModel.swift */; };
@@ -49,6 +53,10 @@
 		28014A92229A86F600AED085 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28081C38228E9B0500F4F22A /* happytests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = happytests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28081C3A228E9B0600F4F22A /* happytests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = happytests.swift; sourceTree = "<group>"; };
+		283D336322ACA30400C3BDE7 /* PlaceBetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceBetViewController.swift; sourceTree = "<group>"; };
+		283D336522ACA65300C3BDE7 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		283D336722ACA94900C3BDE7 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
+		283D336922ACA98600C3BDE7 /* ChooseGameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGameTableViewController.swift; sourceTree = "<group>"; };
 		28481EF22297397300C88B44 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		289314492297529800F38A0A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		2893144B229752A600F38A0A /* LeagueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueModel.swift; sourceTree = "<group>"; };
@@ -103,9 +111,11 @@
 		28014A86229A722100AED085 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				283D336322ACA30400C3BDE7 /* PlaceBetViewController.swift */,
 				28481EF22297397300C88B44 /* SignUpViewController.swift */,
 				28E79EA222850B1F00987D8E /* LoginViewController.swift */,
 				28014A87229A747400AED085 /* LeagueViewController.swift */,
+				283D336922ACA98600C3BDE7 /* ChooseGameTableViewController.swift */,
 				793A7D8122A64545000EF12D /* CreateLeagueViewController.swift */,
 				28014A89229A752F00AED085 /* ProfileViewController.swift */,
 				28014A8D229A762A00AED085 /* SuperTabViewController.swift */,
@@ -129,6 +139,7 @@
 				2893144B229752A600F38A0A /* LeagueModel.swift */,
 				2893144D229752AD00F38A0A /* BetModel.swift */,
 				2893144F229752BC00F38A0A /* NewsModel.swift */,
+				283D336522ACA65300C3BDE7 /* GameModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,6 +194,7 @@
 		793A7D7E22A64312000EF12D /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
+				283D336722ACA94900C3BDE7 /* GameTableViewCell.swift */,
 				793A7D7F22A64343000EF12D /* LeagueCell.swift */,
 			);
 			path = "Custom Cells";
@@ -392,14 +404,18 @@
 				28014A8A229A752F00AED085 /* ProfileViewController.swift in Sources */,
 				793A7D8222A64545000EF12D /* CreateLeagueViewController.swift in Sources */,
 				28E79EA322850B1F00987D8E /* LoginViewController.swift in Sources */,
+				283D336622ACA65300C3BDE7 /* GameModel.swift in Sources */,
 				28014A8E229A762A00AED085 /* SuperTabViewController.swift in Sources */,
 				47944FF0228E4C79004BD0DE /* AuthenticatorModel.swift in Sources */,
 				28014A88229A747400AED085 /* LeagueViewController.swift in Sources */,
+				283D336422ACA30400C3BDE7 /* PlaceBetViewController.swift in Sources */,
 				28481EF32297397300C88B44 /* SignUpViewController.swift in Sources */,
 				2893144A2297529800F38A0A /* UserModel.swift in Sources */,
+				283D336A22ACA98600C3BDE7 /* ChooseGameTableViewController.swift in Sources */,
 				2893144E229752AD00F38A0A /* BetModel.swift in Sources */,
 				793A7D8022A64343000EF12D /* LeagueCell.swift in Sources */,
 				28D2F6F0228397CC0008ECC0 /* AppDelegate.swift in Sources */,
+				283D336822ACA94900C3BDE7 /* GameTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
