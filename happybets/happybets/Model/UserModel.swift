@@ -128,16 +128,16 @@ class UserModel: Hashable {
         let leaguesRef = self.ref.child("users").child(Auth.auth().currentUser!.uid).child("leagues")
         
         leaguesRef.observeSingleEvent(of: .value) { (snapshot) in
-            let leagues = snapshot.value! as! [String:[String:Any]]
+            if let leagues = snapshot.value! as? [String:[String:Any]] {
             
-            var leagueModels = [LeagueModel]()
-            for (key, value) in leagues{
-                let leagueModel =  LeagueModel(name: value["name"] as! String, uid: key, code: value["code"] as! Int, imageName: value["image"] as! String)
-                leagueModels.append(leagueModel)
+                var leagueModels = [LeagueModel]()
+                for (key, value) in leagues{
+                    let leagueModel =  LeagueModel(name: value["name"] as! String, uid: key, code: value["code"] as! Int, imageName: value["image"] as! String)
+                    leagueModels.append(leagueModel)
+                }
+            
+                completion(leagueModels)
             }
-            
-            completion(leagueModels)
-            
         }
     }
     
