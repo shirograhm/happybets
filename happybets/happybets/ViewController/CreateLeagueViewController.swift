@@ -12,19 +12,14 @@ class CreateLeagueViewController: UIViewController, UITextFieldDelegate {
 
     var name: String?
     var imageName: String?
+    var user: UserModel?
+    var save = false
     
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var buttonA: UIButton!
-    @IBOutlet weak var buttonB: UIButton!
-    @IBOutlet weak var buttonC: UIButton!
-    @IBOutlet weak var buttonD: UIButton!
+    @IBOutlet weak var selectedImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var buttons = [buttonA, buttonB, buttonC, buttonD]
-        for button in buttons {
-            button!.showsTouchWhenHighlighted = true
-        }
     }
     
     // MARK: - TextField Functions
@@ -35,32 +30,50 @@ class CreateLeagueViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    
     @IBAction func pressedA(_ sender: Any) {
         imageName = "iconA.png"
+        selectedImage.image = UIImage(named: imageName!)
     }
     @IBAction func pressedB(_ sender: Any) {
         imageName = "iconB.png"
+        selectedImage.image = UIImage(named: imageName!)
     }
     @IBAction func pressedC(_ sender: Any) {
         imageName = "iconC.png"
+        selectedImage.image = UIImage(named: imageName!)
     }
     @IBAction func pressedD(_ sender: Any) {
         imageName = "iconD.png"
+        selectedImage.image = UIImage(named: imageName!)
+    }
+    @IBAction func createPressed(_ sender: Any) {
+        if checkDone() {
+            save = true
+            performSegue(withIdentifier: "back", sender: nil)
+        }
     }
     
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        if let button = sender as? UIBarButtonItem {
-            if button.title == "Save" && checkDone() {
-                //Creates league when saved and when all fields are entered
-                let destVC = segue.destination as! LeagueViewController
-//                destVC.user!.createLeague(name: name!, imageName)
-                //Updates League Overview
-                destVC.addLeague(league: destVC.user!.leagues[name!]!)
-            }
+        if save {
+            //Creates league when saved and when all fields are entered
+            let destVC = segue.destination as! LeagueViewController
+            destVC.user!.createLeague(name: name!, imageName: imageName!, completion: { (success, leagueCode) -> Void in
+                if success {
+                    destVC.user?.joinLeague(code: leagueCode!, completion: { (success) -> Void in
+                        
+                    })
+                }
+            })
+            destVC.user?.getLeagues(completion: { (leagues) -> Void in
+                for league in leagues {
+                    destVC.user?.leagues.updateValue(league, forKey: league.uid)
+                }
+            })
+            //Updates League Overview
+            destVC.addLeague(league: destVC.user!.leagues[name!]!)
         }
     }
     

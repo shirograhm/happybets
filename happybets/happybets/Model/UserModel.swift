@@ -56,9 +56,8 @@ class UserModel: Hashable {
            
             }
         }
-        
-        
     }
+    
     // join a league with a code -> success or failure
     func joinLeague(code:Int, completion: @escaping (_ success: Bool) -> Void){
         print("checking for code \(code)")
