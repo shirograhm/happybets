@@ -9,6 +9,9 @@
 import Foundation
 
 class NewsModel {
+    var articleList : [Article]?
+    
+    
     func retrieveArticles(){
         let todoEndpoint: String = createUrl()
         guard let url = URL(string: todoEndpoint) else {
@@ -17,9 +20,9 @@ class NewsModel {
         }
         let urlRequest = URLRequest(url: url)
         
-        let session = URLSession.shared
+        let session = URLSession(configuration: URLSessionConfiguration.default)
         
-        let task = session.dataTask(with: urlRequest) {
+        let task : URLSessionDataTask = session.dataTask(with: urlRequest) {
             (data, response, error) in
             // check for any errors
             guard error == nil else {
@@ -34,12 +37,16 @@ class NewsModel {
             }
             // parse the result as JSON, since that's what the API provides
             do {
-                guard let jsonResponse = try JSONSerialization.jsonObject(with: responseData, options: [])
+                /*guard let jsonResponse = try JSONSerialization.jsonObject(with: responseData, options: [])
                     as? [String: [String:Any]] else {
                         print("error trying to convert data to JSON")
                         return
-                }
+                }*/
                 
+                let decoder = JSONDecoder()
+                let results = try decoder.decode(ArticleList.self, from: responseData)
+                self.articleList = results.articles.list
+                print(self.articleList![0].title)
                 
                 // the todo object is a dictionary
                 // so we just access the title using the "title" key
@@ -49,22 +56,19 @@ class NewsModel {
                  return
                  }*/
                 
-                self.parseJsonFile(json:jsonResponse)
+                //self.parseJsonFile(json:jsonResponse)
             } catch  {
                 print("error trying to convert data to JSON")
                 return
             }
         }
         task.resume()
+        
     }
     
-    func parseJsonFile(json : [String: [String:Any]]) -> ([String],[String]) {
-        var articleTitles : [String] = []
-        var articleBodies : [String] = []
-        
-        print(json["articles"])
-        
-        return (articleTitles,articleBodies)
+    func getArticleList() -> [Article] {
+        //need to fix bug
+        return []
     }
     
     func createUrl() -> String {
