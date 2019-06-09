@@ -13,9 +13,12 @@ class NewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var news = NewsModel()
+        let news = NewsModel()
+        var articleList : [Article]
         
         news.retrieveArticles()
+        
+        articleList = news.getArticleList()
         // Do any additional setup after loading the view.
     }
     
