@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var ref: DatabaseReference = Database.database().reference()
     var leagueList = [LeagueModel]()
     var user: UserModel?
     
@@ -17,7 +19,8 @@ class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //getUser()
         loadAllLeagues()
     }
     
@@ -30,7 +33,11 @@ class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "selectLeague", for: indexPath) as? LeagueCell
         
-        //Configure custom cell
+        let league = leagueList[indexPath.row]
+        
+        cell!.nameLabel.text = league.name
+        cell!.countLabel.text = "\(league.members.count)"
+        cell!.icon.image = UIImage(named: league.imageName)
         
         return cell!
     }
@@ -44,7 +51,7 @@ class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //Pass through selected League here (for join League)
+        //if let destVC = segue.destination as?
     }
     
     func addLeague(league: LeagueModel) {
@@ -55,6 +62,20 @@ class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func loadAllLeagues() {
         //Should get all of the League data from Firebase into leagueList
+        let leaguesRef = self.ref.child("leagues")
+        
+        leaguesRef.observeSingleEvent(of: .value) { (snapshot) in
+            
+            if let leaguesData = snapshot.value as? [String:[String:Any]] {
+                
+                for (key, value) in leaguesData {
+                    self.leagueList.append(LeagueModel(name: value["name"] as! String, uid: key, code: value["code"] as! Int, imageName: value["image"] as! String))
+                }
+            }
+    
+        }
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
-
 }

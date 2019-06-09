@@ -14,17 +14,10 @@ class CreateLeagueViewController: UIViewController, UITextFieldDelegate {
     var imageName: String?
     
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var buttonA: UIButton!
-    @IBOutlet weak var buttonB: UIButton!
-    @IBOutlet weak var buttonC: UIButton!
-    @IBOutlet weak var buttonD: UIButton!
+    @IBOutlet weak var selectedImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var buttons = [buttonA, buttonB, buttonC, buttonD]
-        for button in buttons {
-            button!.showsTouchWhenHighlighted = true
-        }
     }
     
     // MARK: - TextField Functions
@@ -38,15 +31,19 @@ class CreateLeagueViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func pressedA(_ sender: Any) {
         imageName = "iconA.png"
+        selectedImage.image = UIImage(named: imageName!)
     }
     @IBAction func pressedB(_ sender: Any) {
         imageName = "iconB.png"
+        selectedImage.image = UIImage(named: imageName!)
     }
     @IBAction func pressedC(_ sender: Any) {
         imageName = "iconC.png"
+        selectedImage.image = UIImage(named: imageName!)
     }
     @IBAction func pressedD(_ sender: Any) {
         imageName = "iconD.png"
+        selectedImage.image = UIImage(named: imageName!)
     }
     
     // MARK: - Navigation
