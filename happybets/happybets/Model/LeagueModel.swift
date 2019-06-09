@@ -12,15 +12,17 @@ import Firebase
 class LeagueModel {
     
     var name: String
+    var imageName: String
     var uid: String
     var code: Int
-    var members = [UserModel]()
+    var members = [UserModel : Int]()
     var ref: DatabaseReference = Database.database().reference()
 
-    init(name: String, uid:String, code:Int) {
+    init(name: String, uid:String, code:Int, imageName:String) {
         self.name = name
         self.uid = uid
         self.code = code
+        self.imageName = imageName
     }
     
     // pulls the mambers of a league from the database
@@ -32,7 +34,7 @@ class LeagueModel {
             
             for singleUserData in userData{
                 let userModel = UserModel(email: singleUserData["email"] as! String, uid: singleUserData["uid"] as! String)
-                self.members.append(userModel)
+                self.members.updateValue(singleUserData["points"] as! Int, forKey: userModel)
             }
             
             completion(true)

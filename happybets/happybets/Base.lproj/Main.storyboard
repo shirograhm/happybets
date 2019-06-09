@@ -239,7 +239,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="League Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3x5-y8-LnQ">
-                                <rect key="frame" x="105" y="214" width="121" height="21"/>
+                                <rect key="frame" x="147" y="214" width="121" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -258,6 +258,50 @@
                                     <outlet property="textDropDelegate" destination="Vxb-Jc-JG9" id="ZZJ-yN-HbM"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVj-KZ-wsY">
+                                <rect key="frame" x="67" y="372" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="iconA"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTG-e4-xNR">
+                                <rect key="frame" x="67" y="532" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="iconC"/>
+                                <connections>
+                                    <action selector="pressedC:" destination="Vxb-Jc-JG9" eventType="touchUpInside" id="62L-L6-ByG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlw-sp-a8P">
+                                <rect key="frame" x="227" y="532" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="iconD"/>
+                                <connections>
+                                    <action selector="pressedD:" destination="Vxb-Jc-JG9" eventType="touchUpInside" id="l0t-Vd-css"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIT-GD-bwI">
+                                <rect key="frame" x="227" y="372" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="iconB"/>
+                                <connections>
+                                    <action selector="pressedB:" destination="Vxb-Jc-JG9" eventType="touchUpInside" id="kxC-pH-mkf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="League Icon:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTM-GZ-ceQ">
+                                <rect key="frame" x="147" y="329" width="121" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GiA-Mv-Mxe">
+                                <rect key="frame" x="67" y="372" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="iconA"/>
+                                <connections>
+                                    <action selector="pressedA:" destination="Vxb-Jc-JG9" eventType="touchUpInside" id="TaX-1M-lic"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="2SS-4H-pgw"/>
@@ -268,13 +312,17 @@
                                 <segue destination="cbt-eC-Bdc" kind="unwind" unwindAction="unwindWithSegue:" id="4Qv-GM-UhN"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="Vup-al-oGS">
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="Vup-al-oGS">
                             <connections>
                                 <segue destination="cbt-eC-Bdc" kind="unwind" unwindAction="unwindWithSegue:" id="S1L-Ur-BK7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="buttonA" destination="GiA-Mv-Mxe" id="8dM-bK-ILr"/>
+                        <outlet property="buttonB" destination="SIT-GD-bwI" id="CZh-RP-mkk"/>
+                        <outlet property="buttonC" destination="mTG-e4-xNR" id="pR8-Ri-IxR"/>
+                        <outlet property="buttonD" destination="dlw-sp-a8P" id="r5K-6t-Uh0"/>
                         <outlet property="nameTextField" destination="z9C-QZ-JSf" id="id6-Kw-IgU"/>
                     </connections>
                 </viewController>
@@ -286,7 +334,6 @@
         <!--Navigation Controller-->
         <scene sceneID="aYX-DI-mNh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4d0-qi-CNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="9aG-76-sLy" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VLC-Xa-BVE">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -296,6 +343,7 @@
                         <segue destination="Vxb-Jc-JG9" kind="relationship" relationship="rootViewController" id="QrY-u7-LkM"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4d0-qi-CNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1675" y="2592"/>
         </scene>
@@ -429,6 +477,10 @@
     </scenes>
     <resources>
         <image name="hellothere" width="400" height="225"/>
+        <image name="iconA" width="120" height="120"/>
+        <image name="iconB" width="120" height="120"/>
+        <image name="iconC" width="120" height="120"/>
+        <image name="iconD" width="120" height="120"/>
         <namedColor name="clean_forest">
             <color red="0.050980392156862744" green="0.44313725490196076" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

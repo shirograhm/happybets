@@ -8,7 +8,7 @@
 import Foundation
 import Firebase
 
-class UserModel {
+class UserModel: Hashable {
     
     // user singleton
     static var sharedUserModel = UserModel()
@@ -29,10 +29,10 @@ class UserModel {
     }
 
     // returns with success and the code of the league that was created
-    func createLeague(name:String, completion: @escaping (_ code: Bool, _ leagueCode:Int?) -> Void) {
+    func createLeague(name:String, imageName:String, completion: @escaping (_ code: Bool, _ leagueCode:Int?) -> Void) {
         let code = generateCode()
         
-        let data:[String:Any] = ["name":name, "code":code, "users":[getUserInfoDictionary()]]
+        let data:[String:Any] = ["name":name, "image":imageName, "code":code, "users":[getUserInfoDictionary()]]
         
         self.ref.child("leagues").childByAutoId().setValue(data){
             (error:Error?, ref:DatabaseReference) in
@@ -42,7 +42,7 @@ class UserModel {
                 completion(false, nil)
             } else {
                 
-                let leagueDict = [ref.key!:["name":name, "uid":ref.key!, "code":code]] as [String : Any]
+                let leagueDict = [ref.key!:["name":name, "uid":ref.key!, "code":code, "image":imageName]] as [String : Any]
                 
                 self.ref.child("users").child(Auth.auth().currentUser!.uid).child("leagues").updateChildValues(leagueDict, withCompletionBlock: { (userErr, userRef) in
                 if let userErr = userErr {
@@ -132,7 +132,7 @@ class UserModel {
             
             var leagueModels = [LeagueModel]()
             for (key, value) in leagues{
-                let leagueModel =  LeagueModel(name: value["name"] as! String, uid: key, code: value["code"] as! Int)
+                let leagueModel =  LeagueModel(name: value["name"] as! String, uid: key, code: value["code"] as! Int, imageName: value["image"] as! String)
                 leagueModels.append(leagueModel)
             }
             
@@ -142,7 +142,7 @@ class UserModel {
     }
     
     func getUserInfoDictionary() -> [String:Any]{
-        return ["email":Auth.auth().currentUser!.email!, "uid":Auth.auth().currentUser!.uid]
+        return ["email":Auth.auth().currentUser!.email!, "uid":Auth.auth().currentUser!.uid, "points":100]
     }
     
     func generateCode() -> Int{
@@ -152,6 +152,16 @@ class UserModel {
             result = String(format:"%04d", arc4random_uniform(10000) )
         } while result.count < 4
         return Int(result)!
+    }
+    
+    // MARK: - Hashable functions
+    
+    static func == (lhs: UserModel, rhs: UserModel) -> Bool {
+        return lhs.uid == rhs.uid
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(uid)
     }
     
 }
