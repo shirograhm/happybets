@@ -13,8 +13,6 @@ class PlayerCell: UITableViewCell {
     @IBOutlet weak var playerNameLabel: UILabel!
     @IBOutlet weak var pointLabel: UILabel!
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
