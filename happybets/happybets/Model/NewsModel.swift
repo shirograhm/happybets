@@ -11,8 +11,12 @@ import Foundation
 class NewsModel {
     var articleList : [Article]?
     
+    init() {
+        articleList = []
+    }
     
-    func retrieveArticles(){
+    
+    func retrieveArticles(closure : @escaping ([Article])->Void){
         let todoEndpoint: String = createUrl()
         guard let url = URL(string: todoEndpoint) else {
             print("Error: cannot create URL")
@@ -45,8 +49,9 @@ class NewsModel {
                 
                 let decoder = JSONDecoder()
                 let results = try decoder.decode(ArticleList.self, from: responseData)
-                self.articleList = results.articles.list
-                print(self.articleList![0].title)
+                //self.articleList = results.articles.list
+                
+                closure(results.articles.list)
                 
                 // the todo object is a dictionary
                 // so we just access the title using the "title" key
@@ -64,11 +69,6 @@ class NewsModel {
         }
         task.resume()
         
-    }
-    
-    func getArticleList() -> [Article] {
-        //need to fix bug
-        return []
     }
     
     func createUrl() -> String {

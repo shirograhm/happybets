@@ -14,12 +14,15 @@ class NewsViewController: UIViewController {
         super.viewDidLoad()
 
         let news = NewsModel()
-        var articleList : [Article]
         
-        news.retrieveArticles()
+        news.retrieveArticles(closure : displayArticles)
         
-        articleList = news.getArticleList()
+        
         // Do any additional setup after loading the view.
+    }
+    
+    func displayArticles(articleList : [Article]){
+        print(articleList[0].title)
     }
     
 
