@@ -20,8 +20,10 @@ class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //temp user because I need FireBase Users first
+        user = UserModel(email: "whickman1998@gmail.com", uid: Auth.auth().currentUser!.uid)
         //getUser()
-        loadAllLeagues()
+        loadAllLeagues(completion: reload)
     }
     
     // MARK: - Table View DataSource Methods
@@ -31,7 +33,7 @@ class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "selectLeague", for: indexPath) as? LeagueCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "yeet", for: indexPath) as? LeagueCell
         
         let league = leagueList[indexPath.row]
         
@@ -51,7 +53,13 @@ class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //if let destVC = segue.destination as?
+        if let destVC = segue.destination as? LeagueDetailViewController {
+            let selectedIndexPath = tableView.indexPathForSelectedRow
+            destVC.selectedLeague = leagueList[(selectedIndexPath?.row)!]
+        }
+        else if let destVC = segue.destination as? CreateLeagueViewController {
+            destVC.user = user
+        }
     }
     
     func addLeague(league: LeagueModel) {
@@ -60,7 +68,7 @@ class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.reloadData()
     }
     
-    func loadAllLeagues() {
+    func loadAllLeagues(completion: @escaping () -> Void) {
         //Should get all of the League data from Firebase into leagueList
         let leaguesRef = self.ref.child("leagues")
         
@@ -71,11 +79,13 @@ class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 for (key, value) in leaguesData {
                     self.leagueList.append(LeagueModel(name: value["name"] as! String, uid: key, code: value["code"] as! Int, imageName: value["image"] as! String))
                 }
+                completion()
             }
     
         }
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+    }
+    
+    func reload() {
+        tableView.reloadData()
     }
 }

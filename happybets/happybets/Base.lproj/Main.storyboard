@@ -175,12 +175,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ISa-bI-McI">
-                                <rect key="frame" x="0.0" y="242" width="414" height="571"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ISa-bI-McI">
+                                <rect key="frame" x="0.0" y="172" width="414" height="641"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="114" id="Kzk-1e-OVS" customClass="LeagueCell" customModule="happybets" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="yeet" rowHeight="114" id="Kzk-1e-OVS" customClass="LeagueCell" customModule="happybets" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="114"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kzk-1e-OVS" id="I4e-wx-75k">
@@ -188,30 +188,28 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlW-Mf-8CN">
-                                                    <rect key="frame" x="20" y="17" width="231" height="21"/>
+                                                    <rect key="frame" x="20" y="17" width="231" height="38"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mb-1S-w4r">
-                                                    <rect key="frame" x="20" y="46" width="137" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="50y-tf-1VQ">
-                                                    <rect key="frame" x="314" y="16" width="80" height="80"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="off-Bu-efa">
+                                                    <rect key="frame" x="314" y="17" width="80" height="80"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mb-1S-w4r">
+                                                    <rect key="frame" x="20" y="63" width="137" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="countLabel" destination="6mb-1S-w4r" id="e6u-py-g5E"/>
-                                            <outlet property="icon" destination="50y-tf-1VQ" id="Xjq-P6-GeJ"/>
-                                            <outlet property="image" destination="50y-tf-1VQ" id="Bhd-Dx-Oba"/>
-                                            <outlet property="memberLabel" destination="I4e-wx-75k" id="FbG-Fu-rnV"/>
+                                            <outlet property="icon" destination="off-Bu-efa" id="Ss0-aU-Srd"/>
                                             <outlet property="nameLabel" destination="ZlW-Mf-8CN" id="I7M-RJ-yjg"/>
                                             <segue destination="TgT-kQ-HzY" kind="show" identifier="selectLeague" id="WuM-ME-DaA"/>
                                         </connections>
@@ -345,12 +343,12 @@
                     <navigationItem key="navigationItem" id="RJV-pq-jT8">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="fTu-Gw-eaq">
                             <connections>
-                                <segue destination="cbt-eC-Bdc" kind="unwind" unwindAction="unwindWithSegue:" id="4Qv-GM-UhN"/>
+                                <segue destination="cbt-eC-Bdc" kind="unwind" identifier="back" unwindAction="unwindWithSegue:" id="4Qv-GM-UhN"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Create" id="Vup-al-oGS">
                             <connections>
-                                <segue destination="cbt-eC-Bdc" kind="unwind" unwindAction="unwindWithSegue:" id="S1L-Ur-BK7"/>
+                                <action selector="createPressed:" destination="Vxb-Jc-JG9" id="h9p-aL-4se"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -362,7 +360,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q7W-Rg-FQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="cbt-eC-Bdc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1675.3623188405797" y="3361.6071428571427"/>
+            <point key="canvasLocation" x="-1675" y="3323"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aYX-DI-mNh">
