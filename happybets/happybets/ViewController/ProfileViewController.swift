@@ -29,7 +29,7 @@ class ProfileViewController: UIViewController {
             for league in leagues{
                 print(league.name)
                 league.populateMembers(completion: { (success) in
-                    for member in league.members{
+                    for member in league.members.keys {
                         print(member.email)
                     }
                 })
