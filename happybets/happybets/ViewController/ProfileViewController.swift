@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import Firebase
 
 class ProfileViewController: UIViewController {
 
@@ -22,6 +23,21 @@ class ProfileViewController: UIViewController {
         ref = Database.database().reference()
         
         loadUserData()
+                
+        UserModel.sharedUserModel.getLeagues { (leagues) in
+            //
+            for league in leagues{
+                print(league.name)
+                league.populateMembers(completion: { (success) in
+                    for member in league.members{
+                        print(member.email)
+                    }
+                })
+            }
+        }
+
+
+        
     }
     
     func loadUserData() {
