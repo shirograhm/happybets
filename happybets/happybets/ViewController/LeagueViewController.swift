@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var ref: DatabaseReference = Database.database().reference()
     var leagueList = [LeagueModel]()
     var user: UserModel?
     
@@ -17,8 +19,11 @@ class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        loadAllLeagues()
+        
+        //temp user because I need FireBase Users first
+        user = UserModel(email: "whickman1998@gmail.com", uid: Auth.auth().currentUser!.uid)
+        //getUser()
+        loadAllLeagues(completion: reload)
     }
     
     // MARK: - Table View DataSource Methods
@@ -28,9 +33,13 @@ class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "selectLeague", for: indexPath) as? LeagueCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "yeet", for: indexPath) as? LeagueCell
         
-        //Configure custom cell
+        let league = leagueList[indexPath.row]
+        
+        cell!.nameLabel.text = league.name
+        cell!.countLabel.text = "\(league.members.count)"
+        cell!.icon.image = UIImage(named: league.imageName)
         
         return cell!
     }
@@ -44,7 +53,13 @@ class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //Pass through selected League here (for join League)
+        if let destVC = segue.destination as? LeagueDetailViewController {
+            let selectedIndexPath = tableView.indexPathForSelectedRow
+            destVC.selectedLeague = leagueList[(selectedIndexPath?.row)!]
+        }
+        else if let destVC = segue.destination as? CreateLeagueViewController {
+            destVC.user = user
+        }
     }
     
     func addLeague(league: LeagueModel) {
@@ -53,8 +68,24 @@ class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.reloadData()
     }
     
-    func loadAllLeagues() {
+    func loadAllLeagues(completion: @escaping () -> Void) {
         //Should get all of the League data from Firebase into leagueList
+        let leaguesRef = self.ref.child("leagues")
+        
+        leaguesRef.observeSingleEvent(of: .value) { (snapshot) in
+            
+            if let leaguesData = snapshot.value as? [String:[String:Any]] {
+                
+                for (key, value) in leaguesData {
+                    self.leagueList.append(LeagueModel(name: value["name"] as! String, uid: key, code: value["code"] as! Int, imageName: value["image"] as! String))
+                }
+                completion()
+            }
+    
+        }
     }
-
+    
+    func reload() {
+        tableView.reloadData()
+    }
 }

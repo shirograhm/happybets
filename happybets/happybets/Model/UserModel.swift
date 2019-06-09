@@ -58,9 +58,8 @@ class UserModel: Hashable {
            
             }
         }
-        
-        
     }
+    
     // join a league with a code -> success or failure
     func joinLeague(code:Int, completion: @escaping (_ success: Bool) -> Void){
         print("checking for code \(code)")
@@ -133,6 +132,8 @@ class UserModel: Hashable {
             if let leagues = snapshot.value! as? [String:[String:Any]] {
             
                 var leagueModels = [LeagueModel]()
+                
+                print("the leagues \(leagues)")
                 for (key, value) in leagues{
                     let leagueModel =  LeagueModel(name: value["name"] as! String, uid: key, code: value["code"] as! Int, imageName: value["image"] as! String)
                     leagueModels.append(leagueModel)
