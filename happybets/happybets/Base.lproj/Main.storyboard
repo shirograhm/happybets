@@ -413,7 +413,7 @@
         <!--Item-->
         <scene sceneID="jPX-6n-4fO">
             <objects>
-                <viewController id="kYs-mG-NfS" sceneMemberID="viewController">
+                <viewController id="kYs-mG-NfS" customClass="NewsViewController" customModule="happybets" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wml-nc-yEB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
