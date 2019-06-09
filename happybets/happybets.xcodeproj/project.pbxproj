@@ -22,7 +22,9 @@
 		28D2F6F7228397CD0008ECC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28D2F6F6228397CD0008ECC0 /* Assets.xcassets */; };
 		28D2F6FA228397CD0008ECC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D2F6F8228397CD0008ECC0 /* LaunchScreen.storyboard */; };
 		28E79EA322850B1F00987D8E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E79EA222850B1F00987D8E /* LoginViewController.swift */; };
+		477FF96622A756610014D542 /* LeagueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477FF96522A756610014D542 /* LeagueDetailViewController.swift */; };
 		47944FF0228E4C79004BD0DE /* AuthenticatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47944FEF228E4C79004BD0DE /* AuthenticatorModel.swift */; };
+		47D328FA22AC4B7B00D20335 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D328F922AC4B7B00D20335 /* PlayerCell.swift */; };
 		6158A94A9104761A1F7598D7 /* Pods_happytests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F0E58CB884C003CDDF5BEDD /* Pods_happytests.framework */; };
 		793A7D8022A64343000EF12D /* LeagueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793A7D7F22A64343000EF12D /* LeagueCell.swift */; };
 		793A7D8222A64545000EF12D /* CreateLeagueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793A7D8122A64545000EF12D /* CreateLeagueViewController.swift */; };
@@ -62,6 +64,9 @@
 		28D2F6F9228397CD0008ECC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28D2F6FB228397CD0008ECC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28E79EA222850B1F00987D8E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		477FF96522A756610014D542 /* LeagueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueDetailViewController.swift; sourceTree = "<group>"; };
+		47944FEF228E4C79004BD0DE /* AuthenticatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorModel.swift; sourceTree = "<group>"; };
+		47D328F922AC4B7B00D20335 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
 		2B187E863B1883313AE1C2F1 /* Pods-happytests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-happytests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-happytests/Pods-happytests.debug.xcconfig"; sourceTree = "<group>"; };
 		47944FEF228E4C79004BD0DE /* AuthenticatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorModel.swift; sourceTree = "<group>"; };
 		6227BA5225B16C85768728EC /* Pods-happytests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-happytests.release.xcconfig"; path = "Pods/Target Support Files/Pods-happytests/Pods-happytests.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +116,7 @@
 				793A7D8122A64545000EF12D /* CreateLeagueViewController.swift */,
 				28014A89229A752F00AED085 /* ProfileViewController.swift */,
 				28014A8D229A762A00AED085 /* SuperTabViewController.swift */,
+				477FF96522A756610014D542 /* LeagueDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -186,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				793A7D7F22A64343000EF12D /* LeagueCell.swift */,
+				47D328F922AC4B7B00D20335 /* PlayerCell.swift */,
 				79DA977F22AC8485005164AB /* IconCollectionViewCell.swift */,
 			);
 			path = "Custom Cells";
@@ -390,11 +397,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47D328FA22AC4B7B00D20335 /* PlayerCell.swift in Sources */,
 				28931450229752BC00F38A0A /* NewsModel.swift in Sources */,
 				2893144C229752A600F38A0A /* LeagueModel.swift in Sources */,
 				28014A8A229A752F00AED085 /* ProfileViewController.swift in Sources */,
 				793A7D8222A64545000EF12D /* CreateLeagueViewController.swift in Sources */,
 				28E79EA322850B1F00987D8E /* LoginViewController.swift in Sources */,
+				477FF96622A756610014D542 /* LeagueDetailViewController.swift in Sources */,
 				79DA978022AC8485005164AB /* IconCollectionViewCell.swift in Sources */,
 				28014A8E229A762A00AED085 /* SuperTabViewController.swift in Sources */,
 				47944FF0228E4C79004BD0DE /* AuthenticatorModel.swift in Sources */,
