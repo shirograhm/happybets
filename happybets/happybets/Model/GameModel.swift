@@ -9,11 +9,13 @@
 import Foundation
 
 class GameModel {
-    var team1: String!
-    var team2: String!
+    var home: String!
+    var gameID: Int!
+    var away: String!
     
-    init(t1 : String, t2 : String) {
-        team1 = t1
-        team2 = t2
+    init(gameID: Int, home: String, away: String) {
+        self.home = home
+        self.away = away
+        self.gameID = gameID
     }
 }

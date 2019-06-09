@@ -11,12 +11,12 @@ import UIKit
 class ChooseGameTableViewController: UITableViewController {
 
     var gamesToBetOn = [
-        GameModel(t1: "Golden State Warriors", t2: "Toronto Raptors"),
-        GameModel(t1: "Minnesota Timberwolves", t2: "Seattle Supersonics"),
-        GameModel(t1: "Los Angeles Clippers", t2: "Houston Rockets"),
-        GameModel(t1: "Philadelphia 76ers", t2: "New York Knicks"),
-        GameModel(t1: "Denver Nuggets", t2: "San Antonio Spurs"),
-        GameModel(t1: "Brooklyn Nets", t2: "Sacramento Kings")
+        GameModel(gID: 0, h: "Golden State Warriors", a: "Toronto Raptors"),
+        GameModel(gID: 1, h: "Minnesota Timberwolves", a: "Seattle Supersonics"),
+        GameModel(gID: 2, h: "Los Angeles Clippers", a: "Houston Rockets"),
+        GameModel(gID: 3, h: "Philadelphia 76ers", a: "New York Knicks"),
+        GameModel(gID: 4, h: "Denver Nuggets", a: "San Antonio Spurs"),
+        GameModel(gID: 5, h: "Brooklyn Nets", a: "Sacramento Kings")
     ]
     
     override func viewDidLoad() {
@@ -104,9 +104,5 @@ class ChooseGameTableViewController: UITableViewController {
                 dest.gameChosen = gamesToBetOn[tableView.indexPathForSelectedRow!.row]
             }
         }
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    
-
 }

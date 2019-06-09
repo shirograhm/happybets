@@ -22,7 +22,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     public func getUser(_ result: AuthDataResult?) {
-        if let newID = result?.user.uid {
+        if let _ = result?.user.uid {
             // Successfully logged in
             performSegue(withIdentifier: "toLeagueView", sender: self)
         } else {
