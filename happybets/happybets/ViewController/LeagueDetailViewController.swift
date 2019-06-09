@@ -78,15 +78,16 @@ class LeagueDetailViewController: UIViewController, UITableViewDelegate, UITable
             let player = playerTableData[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath) as! PlayerCell
             //fill cell with data
-            cell.setLabels(standing: String(indexPath.row), playerName: player[indexPath.row].email, points: String(player[indexPath.row].point))
+            cell.setLabels(standing: String(indexPath.row), playerName: player.email, points: String(player.points))
         case betTableView:
-            let bet = playerTableData[indexPath.row]
-            let game = gameData[bet.gameID]
+            let bet = betTableData[indexPath.row]
+            let game = gamesData[bet.gameID]
+            var teamPicked = ""
             if bet.home {
-                let teamPicked = game.home
+                teamPicked = game.home
             }
             else {
-                let teamPicked = game.away
+                teamPicked = game.away
             }
             let cell = tableView.dequeueReusableCell(withIdentifier: "betCell", for: indexPath) as! BetCell
             //fill cell with data
