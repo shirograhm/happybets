@@ -736,7 +736,7 @@
             </objects>
             <point key="canvasLocation" x="138" y="3323"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="DXO-6Y-UWb">
             <objects>
                 <viewController id="Rlm-L2-eoS" customClass="ProfileViewController" customModule="happybets" customModuleProvider="target" sceneMemberID="viewController">
@@ -813,7 +813,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2jx-we-92H"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="a1g-Hs-e0j"/>
+                    <tabBarItem key="tabBarItem" title="Profile" selectedImage="profile_icon" id="a1g-Hs-e0j"/>
                     <navigationItem key="navigationItem" id="PjJ-90-Ida"/>
                     <connections>
                         <outlet property="emailLabel" destination="9j8-9z-eX6" id="Om5-4o-1Ll"/>
@@ -826,7 +826,7 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="2591.5178571428569"/>
         </scene>
-        <!--Item-->
+        <!--News-->
         <scene sceneID="jPX-6n-4fO">
             <objects>
                 <viewController id="kYs-mG-NfS" customClass="NewsViewController" customModule="happybets" customModuleProvider="target" sceneMemberID="viewController">
@@ -883,7 +883,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="igh-fH-Pxg"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Uvs-1B-qzx"/>
+                    <tabBarItem key="tabBarItem" title="News" image="news_icon" selectedImage="news_icon" id="Uvs-1B-qzx"/>
                     <navigationItem key="navigationItem" id="RTR-we-3Ut"/>
                     <connections>
                         <outlet property="newsTable" destination="aLm-3a-iJH" id="lNw-ty-tLc"/>
@@ -897,7 +897,7 @@
         <scene sceneID="kHS-rl-4yx">
             <objects>
                 <navigationController id="c80-h0-iIN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="News" selectedImage="news_icon" id="7eB-Vu-o5J"/>
+                    <tabBarItem key="tabBarItem" title="News" image="news_icon" selectedImage="news_icon" id="7eB-Vu-o5J"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bux-qo-pPn">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -975,7 +975,7 @@
         <scene sceneID="ysZ-oC-iK7">
             <objects>
                 <navigationController id="5Oj-qr-zyr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" selectedImage="profile_icon" id="D8p-Ks-5LM"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile_icon" selectedImage="profile_icon" id="D8p-Ks-5LM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dTI-FB-4vl">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -992,7 +992,7 @@
         <scene sceneID="xG6-T1-wqN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oyZ-xv-JpH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Leagues" selectedImage="league_icon" id="4bF-6X-gzY"/>
+                    <tabBarItem key="tabBarItem" title="Leagues" image="league_icon" selectedImage="league_icon" id="4bF-6X-gzY"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="BRO-Al-3Nl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QuX-fE-aWp">
