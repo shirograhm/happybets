@@ -51,4 +51,9 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         return leagueModels.count
     }
     
+    //Required for unwind
+    @IBAction func unwind(segue:UIStoryboardSegue) {
+        
+    }
+    
 }
