@@ -594,7 +594,7 @@
                         <outlet property="leagueIcon" destination="EJg-gH-xOm" id="HoM-hU-xKd"/>
                         <outlet property="leagueTitleLabel" destination="Mpl-Po-hYs" id="cfx-n3-Oow"/>
                         <outlet property="playerTableView" destination="det-7E-kCp" id="xTi-BX-f9N"/>
-                        <segue destination="76J-3y-JLc" kind="show" id="0Iw-3X-FjZ"/>
+                        <segue destination="76J-3y-JLc" kind="show" identifier="toPlaceBetView" id="0Iw-3X-FjZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tCT-o9-Ule" userLabel="First Responder" sceneMemberID="firstResponder"/>
