@@ -11,12 +11,8 @@ import Foundation
 class NewsModel {
     var articleList : [Article]?
     
-    init() {
-        articleList = []
-    }
     
-    
-    func retrieveArticles(closure : @escaping ([Article])->Void){
+    func retrieveArticles(){
         let todoEndpoint: String = createUrl()
         guard let url = URL(string: todoEndpoint) else {
             print("Error: cannot create URL")
@@ -49,10 +45,16 @@ class NewsModel {
                 
                 let decoder = JSONDecoder()
                 let results = try decoder.decode(ArticleList.self, from: responseData)
+<<<<<<< HEAD
                 //self.articleList = results.articles.list
                 DispatchQueue.main.async {
                     closure(results.articles.list)
                 }
+=======
+                self.articleList = results.articles.list
+                print(self.articleList![0].title)
+                
+>>>>>>> parent of 6252cab... view controller retrieves data correctly
                 // the todo object is a dictionary
                 // so we just access the title using the "title" key
                 // so check for a title and print it if we have one
@@ -69,6 +71,11 @@ class NewsModel {
         }
         task.resume()
         
+    }
+    
+    func getArticleList() -> [Article] {
+        //need to fix bug
+        return []
     }
     
     func createUrl() -> String {

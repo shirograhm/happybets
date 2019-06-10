@@ -18,13 +18,15 @@ class NewsViewController: UIViewController {
         super.viewDidLoad()
 
         let news = NewsModel()
+        var articleList : [Article]
         
-        news.retrieveArticles(closure : displayArticles)
+        news.retrieveArticles()
         
-        
+        articleList = news.getArticleList()
         // Do any additional setup after loading the view.
     }
     
+<<<<<<< HEAD
     func displayArticles(alist : [Article]){
         articleList = alist
         
@@ -33,6 +35,8 @@ class NewsViewController: UIViewController {
         
     }
     
+=======
+>>>>>>> parent of 6252cab... view controller retrieves data correctly
 
     /*
     // MARK: - Navigation
