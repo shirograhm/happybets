@@ -56,6 +56,23 @@ class LeagueModel {
             }
         }
     }
+      
+    // pulls an array of all leagues from the database
+    static func loadAllLeagues(completion: @escaping (_ tempArr: [LeagueModel]) -> Void) {
+        //Should get all of the League data from Firebase into leagueList
+        let leaguesRef = Database.database().reference().child("leagues")
+        
+        leaguesRef.observeSingleEvent(of: .value) { (snapshot) in
+            
+            if let leaguesData = snapshot.value as? [String:[String:Any]] {
+                var tempArr = [LeagueModel]()
+                for (key, value) in leaguesData {
+                    tempArr.append(LeagueModel(name: value["name"] as! String, uid: key, code: value["code"] as! Int, imageName: value["image"] as! String))
+                }
+                completion(tempArr)
+            }
+        }
+    }
 
     func storeLeague() {
         

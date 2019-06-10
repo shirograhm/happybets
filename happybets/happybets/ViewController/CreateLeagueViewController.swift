@@ -12,7 +12,6 @@ class CreateLeagueViewController: UIViewController, UITextFieldDelegate {
 
     var name: String?
     var imageName: String?
-    var user: UserModel?
     var save = false
     
     @IBOutlet weak var nameTextField: UITextField!
@@ -60,20 +59,18 @@ class CreateLeagueViewController: UIViewController, UITextFieldDelegate {
         if save {
             //Creates league when saved and when all fields are entered
             let destVC = segue.destination as! LeagueViewController
-            destVC.user!.createLeague(name: name!, imageName: imageName!, completion: { (success, leagueCode) -> Void in
-                if success {
-                    destVC.user?.joinLeague(code: leagueCode!, completion: { (success) -> Void in
-                        
-                    })
+            UserModel.sharedUserModel.createLeague(name: name!, imageName: imageName!, completion: { (success, leagueCode) -> Void in
+                if !success {
+                    print("No bueno")
                 }
             })
-            destVC.user?.getLeagues(completion: { (leagues) -> Void in
+            UserModel.sharedUserModel.getLeagues(completion: { (leagues) -> Void in
                 for league in leagues {
-                    destVC.user?.leagues.updateValue(league, forKey: league.uid)
+                    UserModel.sharedUserModel.leagues.updateValue(league, forKey: league.uid)
                 }
             })
             //Updates League Overview
-            destVC.addLeague(league: destVC.user!.leagues[name!]!)
+            destVC.addLeague(league: UserModel.sharedUserModel.leagues[name!]!)
         }
     }
     

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 class GameModel {
     var home: String!
@@ -18,4 +19,5 @@ class GameModel {
         self.away = away
         self.gameID = gameID
     }
+    
 }
