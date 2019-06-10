@@ -15,71 +15,89 @@ class LeagueDetailViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var betTableView: UITableView!
     @IBOutlet weak var leagueTitleLabel: UILabel!
     @IBOutlet weak var leagueIcon: UIImageView!
+    @IBOutlet weak var addBetButton: UIButton!
     
-    var playerTableData : [UserModel] = []
-    var betTableData : [BetModel] = []
+    var members = [UserModel : Int]()
+    var sortedMembers = [(key: UserModel, value: Int)]()
+    var betTableData = [BetModel]()
     var leagueTitle : String?
     var leagueId : String?
-    var ref : DatabaseReference!
-    var databaseHandle : DatabaseHandle?
+    var ref: DatabaseReference = Database.database().reference()
     var selectedLeague : LeagueModel?
-    var gamesData : [GameModel] = []
+    var gamesData : [GameModel] = [
+        GameModel(gameID: 0, home: "Golden State Warriors", away: "Toronto Raptors"),
+        GameModel(gameID: 1, home: "Minnesota Timberwolves", away: "Seattle Supersonics"),
+        GameModel(gameID: 2, home: "Los Angeles Clippers", away: "Houston Rockets"),
+        GameModel(gameID: 3, home: "Philadelphia 76ers", away: "New York Knicks"),
+        GameModel(gameID: 4, home: "Denver Nuggets", away: "San Antonio Spurs"),
+        GameModel(gameID: 5, home: "Brooklyn Nets", away: "Sacramento Kings")
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        leagueTitle = selectedLeague?.name
-        leagueTitleLabel.text = leagueTitle
-        leagueIcon.image = UIImage(named: selectedLeague?.imageName ?? "iconD")
-        leagueId = selectedLeague?.uid
-        // Do any additional setup after loading the view.
         playerTableView.delegate = self
         betTableView.delegate = self
         playerTableView.dataSource = self
         betTableView.dataSource = self
+        leagueTitle = selectedLeague?.name
+        leagueTitleLabel.text = leagueTitle
+        leagueIcon.image = UIImage(named: selectedLeague?.imageName ?? "iconD")
+        leagueId = selectedLeague?.uid
+        selectedLeague?.populateMembers(completion: reloadLeaderboard)
+        selectedLeague?.populateBets(completion: reloadBets)
+        // Do any additional setup after loading the view.
         
-        ref = Database.database().reference()
-        loadAllPlayers(completion: reloadLeaderboard)
-        playerTableData.sort(by: compareUserModel)
-        loadPlayersBets(completion: reloadBets)
-        loadAllGames {
-            print("success")
-        }
+        members = selectedLeague!.members
+        sortedMembers = sortMembers(members: members)
+        betTableData = selectedLeague!.bets
+        betTableView.rowHeight = 80
         // get data from firebase and fill tables
     }
     
-    func compareUserModel(user1: UserModel, user2: UserModel) -> Bool {
-        return user1.points > user2.points
+    func sortMembers(members: [UserModel : Int]) -> [(key: UserModel, value: Int)]{
+        var sortedMembers = [(key: UserModel, value: Int)]()
+        for (key, value) in members {
+            sortedMembers.append((key, value))
+        }
+        sortedMembers = sortedMembers.sorted(by: sortHelper)
+        return sortedMembers
+    }
+    
+    func sortHelper(user1: (key: UserModel,value: Int), user2: (key: UserModel, value: Int)) -> Bool{
+        return (user1.value > user2.value)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
     @IBAction func addBetPressed(_ sender: Any) {
-
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var numberOfRow = 1
-        switch tableView {
-        case playerTableView:
-            numberOfRow = playerTableData.count
-        case betTableView:
-            numberOfRow = betTableData.count
-        default:
-            print("error")
+        if tableView ==  playerTableView {
+            let numberOfRow = sortedMembers.count
+            return numberOfRow
         }
-        return numberOfRow
+        else if tableView == betTableView {
+            let numberOfRow = betTableData.count
+            return numberOfRow
+        }
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = UITableViewCell()
-        switch tableView {
-        case playerTableView:
-            let player = playerTableData[indexPath.row]
+        if tableView == playerTableView {
+            let player = sortedMembers[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath) as! PlayerCell
             //fill cell with data
-            cell.setLabels(standing: String(indexPath.row), playerName: player.email, points: String(player.points))
-        case betTableView:
+            cell.playerNameLabel.text = player.key.email
+            cell.standingLabel.text = String(indexPath.row + 1)
+            cell.pointLabel.text = String(player.value)
+            return cell
+        }
+        else if tableView ==  betTableView {
             let bet = betTableData[indexPath.row]
             let game = gamesData[bet.gameID]
             var teamPicked = ""
@@ -91,72 +109,79 @@ class LeagueDetailViewController: UIViewController, UITableViewDelegate, UITable
             }
             let cell = tableView.dequeueReusableCell(withIdentifier: "betCell", for: indexPath) as! BetCell
             //fill cell with data
-            cell.setLabels(teamPicked: teamPicked, pointsWagered: String(bet.pointAmount))
+            cell.teamPickedLabel.text = teamPicked
+            cell.pointWageredLabel.text = String(bet.pointAmount)
             if bet.win == "win" {
                 cell.backgroundColor = .red
             }
-            else if bet.win == "lost"{
+            else if bet.win == "lost" {
                 cell.backgroundColor = .green
             }
-            else if bet.win == "in progess"{
+            else if bet.win == "in progress" {
                 cell.backgroundColor = .yellow
             }
             else {
                 cell.backgroundColor = .white
             }
-        default:
-            print("error")
+            return cell
         }
-        return cell
+        return UITableViewCell()
     }
     
-    func loadAllPlayers(completion: @escaping () -> Void) {
-        //Should get all of the League data from Firebase into leagueList
-        let playersRef = self.ref.child("leagues").child(leagueId ?? "").child("users")
-        playersRef.observe(.childAdded, with: { (snapshot) in
-            if let playersData = snapshot.value as? [Int:[String:Any]] {
-                for (key, value) in playersData {
-                    self.playerTableData.append(UserModel(email: value["email"] as! String, uid: value["uid"] as! String, points: value["points"] as! Int))
-                }
-                completion()
-            }
-        })
+//    func loadAllGames(completion: @escaping () -> Void) {
+//        //Should get all of the League data from Firebase into leagueList
+//        let gamesRef = self.ref.child("games")
+//        gamesRef.observeSingleEvent(of: .value) { (snapshot) in
+//            if let gamesData = snapshot.value as? [[String:Any]] {
+//                for singleGameData in gamesData {
+//                    self.gamesData.append(GameModel(gameID: singleGameData["gameID"] as! Int, home: singleGameData["home"] as! String, away: singleGameData["away"] as! String))
+//                }
+//                completion()
+//            }
+//        }
+//    }
+    
+    func hasUser(user1: (key: UserModel,value: Int)) {
+        return
     }
     
-    func loadAllGames(completion: @escaping () -> Void) {
-        //Should get all of the League data from Firebase into leagueList
-        let gamesRef = self.ref.child("games")
-        gamesRef.observeSingleEvent(of: .value) { (snapshot) in
-            if let gamesData = snapshot.value as? [Int:[String:Any]] {
-                for (key, value) in gamesData {
-                    self.gamesData.append(GameModel(gameID: value["gameID"] as! Int, home: value["home"] as! String, away: value["away"] as! String))
-                }
-                completion()
+    func reloadLeaderboard(success: Bool) {
+        if success {
+            members = selectedLeague!.members
+            if (members[UserModel(email: "", uid: Auth.auth().currentUser!.uid)] != nil) {
+                addBetButton.setTitle("Add Bet", for: .normal)
+                addBetButton.addTarget(self, action: #selector(addBet), for: .touchUpInside)
             }
+            else {
+                addBetButton.setTitle("Not in league", for: .normal)
+                addBetButton.addTarget(self, action: #selector(showNotInLeague), for: .touchUpInside)
+            }
+            sortedMembers = sortMembers(members: members)
+            playerTableView.reloadData()
+        }
+        else {
+            print("error loading data")
         }
     }
     
-    func loadPlayersBets(completion: @escaping () -> Void) {
-        //Should get all of the League data from Firebase into leagueList
-        let betsRef = self.ref.child("leagues").child(leagueId ?? "").child("bets")
-        betsRef.observe(.childAdded, with: { (snapshot) in
-            if let betsData = snapshot.value as? [Int:[String:Any]] {
-                for (key, value) in betsData {
-                    if (value["uid"] as! String == Auth.auth().currentUser!.uid) {
-                        self.betTableData.append(BetModel(gameID: value["gameID"] as! Int, homer: value["homer"] as! Bool, pointAMT: value["pointAMT"] as! Int, uid: value["uid"] as! String, win: value["win"] as! String))
-                    }
-                }
-                completion()
-            }
-        })
+    @objc func addBet(sender: UIButton!) {
+        performSegue(withIdentifier: "toPlaceBetView", sender: nil)
     }
     
-    func reloadLeaderboard() {
-        playerTableView.reloadData()
+    @objc func showNotInLeague(sender: UIButton!) {
+        let badAddBetAlert = UIAlertController(title: "Can't Add Bet", message: "You must join the league to add bets", preferredStyle: .alert)
+        badAddBetAlert.addAction(UIAlertAction(title: "Got it", style: .cancel))
+        self.present(badAddBetAlert, animated: true, completion: nil)
     }
     
-    func reloadBets() {
-        betTableView.reloadData()
+    func reloadBets(success: Bool) {
+        if success {
+            betTableData = selectedLeague!.bets
+            betTableView.reloadData()
+        }
+        else {
+            print("error loading data")
+        }
     }
     
     @IBAction func unwindToDetail(segue: UIStoryboardSegue) {

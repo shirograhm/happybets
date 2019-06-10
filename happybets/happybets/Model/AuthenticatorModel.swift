@@ -25,6 +25,7 @@ class AuthenticatorModel {
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if let e = error {
                 print(e)
+                callback(nil)
                 return
             }
             callback(user)

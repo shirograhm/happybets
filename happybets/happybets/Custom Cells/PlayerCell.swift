@@ -23,10 +23,4 @@ class PlayerCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
-    
-    func setLabels(standing: String, playerName: String, points: String) {
-        standingLabel.text = standing
-        playerNameLabel.text = playerName
-        pointLabel.text = points
-    }
 }

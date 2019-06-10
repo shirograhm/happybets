@@ -66,5 +66,4 @@ class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDa
         leagueList.append(league)
         tableView.reloadData()
     }
-    
 }
