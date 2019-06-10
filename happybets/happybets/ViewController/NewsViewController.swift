@@ -54,4 +54,19 @@ extension NewsViewController : UITableViewDelegate, UITableViewDataSource
         cell.articleTitle.text = articleList[indexPath.row].title
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(60)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "articleSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ArticleViewController
+        {
+            destination.article = articleList[(newsTable.indexPathForSelectedRow?.row)!]
+        }
+    }
 }
