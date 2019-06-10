@@ -15,6 +15,7 @@ class LeagueDetailViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var betTableView: UITableView!
     @IBOutlet weak var leagueTitleLabel: UILabel!
     @IBOutlet weak var leagueIcon: UIImageView!
+    @IBOutlet weak var addBetButton: UIButton!
     
     var members = [UserModel : Int]()
     var sortedMembers = [(key: UserModel, value: Int)]()
@@ -71,7 +72,7 @@ class LeagueDetailViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     @IBAction func addBetPressed(_ sender: Any) {
-
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -140,15 +141,37 @@ class LeagueDetailViewController: UIViewController, UITableViewDelegate, UITable
 //        }
 //    }
     
+    func hasUser(user1: (key: UserModel,value: Int)) {
+        return
+    }
+    
     func reloadLeaderboard(success: Bool) {
         if success {
             members = selectedLeague!.members
+            if (members[UserModel(email: "", uid: Auth.auth().currentUser!.uid)] != nil) {
+                addBetButton.setTitle("Add Bet", for: .normal)
+                addBetButton.addTarget(self, action: #selector(addBet), for: .touchUpInside)
+            }
+            else {
+                addBetButton.setTitle("Not in league", for: .normal)
+                addBetButton.addTarget(self, action: #selector(showNotInLeague), for: .touchUpInside)
+            }
             sortedMembers = sortMembers(members: members)
             playerTableView.reloadData()
         }
         else {
             print("error loading data")
         }
+    }
+    
+    @objc func addBet(sender: UIButton!) {
+        performSegue(withIdentifier: "toPlaceBetView", sender: nil)
+    }
+    
+    @objc func showNotInLeague(sender: UIButton!) {
+        let badAddBetAlert = UIAlertController(title: "Can't Add Bet", message: "You must join the league to add bets", preferredStyle: .alert)
+        badAddBetAlert.addAction(UIAlertAction(title: "Got it", style: .cancel))
+        self.present(badAddBetAlert, animated: true, completion: nil)
     }
     
     func reloadBets(success: Bool) {
