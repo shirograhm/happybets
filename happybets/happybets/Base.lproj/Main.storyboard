@@ -870,6 +870,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="articleTitle" destination="9us-Z2-Mds" id="x35-vy-5oj"/>
+                                            <segue destination="L1x-Nl-udo" kind="show" identifier="articleSegue" id="buh-Hz-YNy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -886,12 +887,28 @@
                     <navigationItem key="navigationItem" id="RTR-we-3Ut"/>
                     <connections>
                         <outlet property="newsTable" destination="aLm-3a-iJH" id="lNw-ty-tLc"/>
-                        <segue destination="L1x-Nl-udo" kind="show" identifier="articleSegue" id="cfp-z8-8Ts"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1d-rU-FA6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1069.5652173913045" y="1849.5535714285713"/>
+            <point key="canvasLocation" x="1800" y="2042"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="kHS-rl-4yx">
+            <objects>
+                <navigationController id="c80-h0-iIN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="7eB-Vu-o5J"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bux-qo-pPn">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kYs-mG-NfS" kind="relationship" relationship="rootViewController" id="PY0-rP-1Oe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yFS-yy-yyq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="997" y="1850"/>
         </scene>
         <!--Title-->
         <scene sceneID="KHW-0T-Yd0">
@@ -921,14 +938,6 @@
                                     </label>
                                 </subviews>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOT-6s-NUb">
-                                <rect key="frame" x="26" y="50" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="kYs-mG-NfS" kind="show" id="OCQ-6D-R7c"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="bPa-Nl-kwm"/>
@@ -953,14 +962,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="kYs-mG-NfS" kind="relationship" relationship="viewControllers" id="BhR-mb-sWx"/>
                         <segue destination="oyZ-xv-JpH" kind="relationship" relationship="viewControllers" id="Z7s-YK-Fyn"/>
                         <segue destination="5Oj-qr-zyr" kind="relationship" relationship="viewControllers" id="MBZ-jb-gOs"/>
+                        <segue destination="c80-h0-iIN" kind="relationship" relationship="viewControllers" id="8UT-6g-JJZ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zEi-dr-IHD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="947"/>
+            <point key="canvasLocation" x="138" y="1045"/>
         </scene>
         <!--Item-->
         <scene sceneID="ysZ-oC-iK7">
