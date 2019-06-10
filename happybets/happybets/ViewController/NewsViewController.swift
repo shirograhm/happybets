@@ -10,6 +10,10 @@ import UIKit
 
 class NewsViewController: UIViewController {
 
+    var articleList : [Article] = []
+    
+    
+    @IBOutlet weak var newsTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,8 +25,12 @@ class NewsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func displayArticles(articleList : [Article]){
-        print(articleList[0].title)
+    func displayArticles(alist : [Article]){
+        articleList = alist
+        
+        print(alist[0].title)
+        self.newsTable.reloadData()
+        
     }
     
 
@@ -36,4 +44,18 @@ class NewsViewController: UIViewController {
     }
     */
 
+}
+
+extension NewsViewController : UITableViewDelegate, UITableViewDataSource
+{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(articleList.count)
+        return articleList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = newsTable.dequeueReusableCell(withIdentifier: "article", for: indexPath) as! articleViewCell
+        cell.articleTitle.text = articleList[indexPath.row].title
+        return cell
+    }
 }
