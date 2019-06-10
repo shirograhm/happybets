@@ -33,7 +33,7 @@ class LeagueModel {
             let userData = snapshot.value! as! [[String:Any]]
             
             for singleUserData in userData{
-                let userModel = UserModel(email: singleUserData["email"] as! String, uid: singleUserData["uid"] as! String)
+                let userModel = UserModel(email: singleUserData["email"] as! String, uid: singleUserData["uid"] as! String, points: 100)
                 self.members.updateValue(singleUserData["points"] as! Int, forKey: userModel)
             }
             

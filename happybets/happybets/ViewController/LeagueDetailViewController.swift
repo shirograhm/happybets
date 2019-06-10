@@ -83,7 +83,7 @@ class LeagueDetailViewController: UIViewController, UITableViewDelegate, UITable
             let bet = betTableData[indexPath.row]
             let game = gamesData[bet.gameID]
             var teamPicked = ""
-            if bet.home {
+            if bet.homer {
                 teamPicked = game.home
             }
             else {
@@ -91,7 +91,7 @@ class LeagueDetailViewController: UIViewController, UITableViewDelegate, UITable
             }
             let cell = tableView.dequeueReusableCell(withIdentifier: "betCell", for: indexPath) as! BetCell
             //fill cell with data
-            cell.setLabels(teamPicked: teamPicked, pointsWagered: bet.pointAMT)
+            cell.setLabels(teamPicked: teamPicked, pointsWagered: String(bet.pointAmount))
             if bet.win == "win" {
                 cell.backgroundColor = .red
             }
@@ -129,7 +129,7 @@ class LeagueDetailViewController: UIViewController, UITableViewDelegate, UITable
         gamesRef.observeSingleEvent(of: .value) { (snapshot) in
             if let gamesData = snapshot.value as? [Int:[String:Any]] {
                 for (key, value) in gamesData {
-                    self.leagueList.append(GameModel(gameID: value["gameID"] as! String, home: value["home"] as! String, away: value["away"]))
+                    self.gamesData.append(GameModel(gameID: value["gameID"] as! Int, home: value["home"] as! String, away: value["away"] as! String))
                 }
                 completion()
             }

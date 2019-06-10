@@ -21,7 +21,7 @@ class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         
         //temp user because I need FireBase Users first
-        user = UserModel(email: "whickman1998@gmail.com", uid: Auth.auth().currentUser!.uid)
+        //user = UserModel(email: "whickman1998@gmail.com", uid: Auth.auth().currentUser!.uid)
         //getUser()
         loadAllLeagues(completion: reload)
     }
