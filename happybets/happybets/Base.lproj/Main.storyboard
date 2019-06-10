@@ -893,11 +893,11 @@
             </objects>
             <point key="canvasLocation" x="1800" y="2042"/>
         </scene>
-        <!--Item-->
+        <!--News-->
         <scene sceneID="kHS-rl-4yx">
             <objects>
                 <navigationController id="c80-h0-iIN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="7eB-Vu-o5J"/>
+                    <tabBarItem key="tabBarItem" title="News" selectedImage="news_icon" id="7eB-Vu-o5J"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bux-qo-pPn">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -971,11 +971,11 @@
             </objects>
             <point key="canvasLocation" x="138" y="1045"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="ysZ-oC-iK7">
             <objects>
                 <navigationController id="5Oj-qr-zyr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="D8p-Ks-5LM"/>
+                    <tabBarItem key="tabBarItem" title="Profile" selectedImage="profile_icon" id="D8p-Ks-5LM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dTI-FB-4vl">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -988,11 +988,11 @@
             </objects>
             <point key="canvasLocation" x="138" y="1850"/>
         </scene>
-        <!--Item-->
+        <!--Leagues-->
         <scene sceneID="xG6-T1-wqN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oyZ-xv-JpH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="4bF-6X-gzY"/>
+                    <tabBarItem key="tabBarItem" title="Leagues" selectedImage="league_icon" id="4bF-6X-gzY"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="BRO-Al-3Nl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QuX-fE-aWp">
@@ -1016,6 +1016,9 @@
         <image name="iconC" width="120" height="120"/>
         <image name="iconD" width="120" height="120"/>
         <image name="krabs" width="384" height="256"/>
+        <image name="league_icon" width="25" height="25"/>
+        <image name="news_icon" width="25" height="25"/>
+        <image name="profile_icon" width="25" height="25"/>
         <namedColor name="clean_forest">
             <color red="0.050980392156862744" green="0.44313725490196076" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
