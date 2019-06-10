@@ -42,7 +42,7 @@
 		<key>Pods-happytests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>11</integer>
+			<integer>10</integer>
 		</dict>
 		<key>leveldb-library.xcscheme_^#shared#^_</key>
 		<dict>
