@@ -22,9 +22,4 @@ class BetCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
-    func setLabels(teamPicked: String, pointsWagered: String) {
-        teamPickedLabel.text = teamPicked
-        pointWageredLabel.text = pointsWagered
-    }
 }

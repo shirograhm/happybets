@@ -81,7 +81,6 @@ class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
                 completion()
             }
-    
         }
     }
     

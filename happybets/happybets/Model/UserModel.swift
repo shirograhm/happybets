@@ -16,7 +16,6 @@ class UserModel: Hashable {
     var ref: DatabaseReference = Database.database().reference()
     var email:String!
     var password:String!
-    var points: Int!
     var uid:String!
     var leagues = [String : LeagueModel]()
 
@@ -24,10 +23,9 @@ class UserModel: Hashable {
     // private initializer
     private init(){}
     
-    init(email:String, uid:String, points: Int){
+    init(email:String, uid:String){
         self.email = email
         self.uid = uid
-        self.points = points
     }
 
     // returns with success and the code of the league that was created
