@@ -55,7 +55,7 @@ class LeagueDetailViewController: UIViewController, UITableViewDelegate, UITable
         return 1
     }
     @IBAction func addBetPressed(_ sender: Any) {
-        
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -159,4 +159,15 @@ class LeagueDetailViewController: UIViewController, UITableViewDelegate, UITable
         betTableView.reloadData()
     }
     
+    @IBAction func unwindToDetail(segue: UIStoryboardSegue) {
+        betTableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toPlaceBetView" {
+            let dest = segue.destination as! PlaceBetViewController
+            
+            dest.leagueID = leagueId
+        }
+    }
 }

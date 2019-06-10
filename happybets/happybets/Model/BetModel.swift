@@ -25,11 +25,13 @@ class BetModel {
         self.win = win
     }
     
-    public static func storeBet(pts: Int, uID: String, gm: GameModel, tm1: Bool) {
-        // TODO: Store bet into firebase
-        print(pts)
-        print(uID)
-        print(gm)
-        print(tm1)
+    public static func storeBet(pts: Int, uID: String, gameID: Int, homer: Bool, leagueID: String) {
+        let ref: DatabaseReference! = Database.database().reference()
+        
+        ref.child("leagues").child(leagueID).child("bets").child(uID).child("gameID").setValue(gameID)
+        ref.child("leagues").child(leagueID).child("bets").child(uID).child("homer").setValue(homer)
+        ref.child("leagues").child(leagueID).child("bets").child(uID).child("pointAMT").setValue(pts)
+        ref.child("leagues").child(leagueID).child("bets").child(uID).child("win").setValue("in progress")
+        
     }
 }
