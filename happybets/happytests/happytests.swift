@@ -8,7 +8,6 @@
 
 import XCTest
 import Firebase
-import UserModel
 
 class happytests: XCTestCase {
 
