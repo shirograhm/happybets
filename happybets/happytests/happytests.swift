@@ -1,4 +1,4 @@
-//
+///Users/gaberoeloffs/Desktop/happybets/happybets/happybets.xcodeproj
 //  happytests.swift
 //  happytests
 //
@@ -8,6 +8,7 @@
 
 import XCTest
 import Firebase
+import UserModel
 
 class happytests: XCTestCase {
 
@@ -27,6 +28,28 @@ class happytests: XCTestCase {
     
     func testAdminLogins() {
         // Some code to test our authentication here
+    }
+    
+    func testCreateLeague(){
+        
+        let userModel = UserModel()
+        
+        let originalImages = loadImages()
+        // Create an expectation
+        let expectation = self.expectation(description: "Scaling")
+        var scaledImages: [UIImage]?
+        scaler.scale(originalImages) {
+            scaledImages = $0
+            // Fullfil the expectation to let the test runner
+            // know that it's OK to proceed
+            expectation.fulfill()
+        }
+        // Wait for the expectation to be fullfilled, or time out
+        // after 5 seconds. This is where the test runner will pause.
+        waitForExpectations(timeout: 5, handler: nil)
+        XCTAssertEqual(scaledImages?.count, originalImages.count)
+    
+
     }
 
     func testPerformanceExample() {
