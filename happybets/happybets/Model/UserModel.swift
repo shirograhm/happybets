@@ -87,7 +87,7 @@ class UserModel: Hashable {
                 //add the user to the league's user list
                 usersData.append(self.getUserInfoDictionary())
                 
-                let data:[String:Any] = ["name":foundValue!["name"] as! String, "code":foundValue!["code"]!, "users":usersData]
+                let data:[String:Any] = ["name":foundValue!["name"] as! String, "code":foundValue!["code"]!, "image":foundValue!["image"] as! String, "users":usersData]
                 
                 self.ref.child("leagues").child(foundKey!).setValue(data){
                     (error:Error?, ref:DatabaseReference) in
@@ -97,9 +97,10 @@ class UserModel: Hashable {
                     } else {
                         
                         let name = foundValue!["name"] as! String
-                        let foundCode = foundValue!["code"] as! String
+                        let foundCode = foundValue!["code"] as! Int
+                        let image = foundValue!["image"] as! String
                         
-                        let leagueDict = [foundKey!:["name":name, "uid":foundKey!, "code":foundCode]] as [String : Any]
+                        let leagueDict = [foundKey!:["name":name, "uid":foundKey!, "code":foundCode, "image":image]] as [String : Any]
  self.ref.child("users").child(Auth.auth().currentUser!.uid).child("leagues").updateChildValues(leagueDict, withCompletionBlock: { (userErr, userRef) in
                             if let userErr = userErr {
                                 print("Data could not be saved: \(userErr).")

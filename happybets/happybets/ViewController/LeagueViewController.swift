@@ -19,9 +19,11 @@ class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        LeagueModel.loadAllLeagues(completion: {(data) -> Void in
-            self.leagueList = data
-            self.tableView.reloadData()
+        UserModel.sharedUserModel.getLeagues(completion: { (leagues) -> Void in
+            DispatchQueue.main.async {
+                self.leagueList = leagues
+                self.tableView.reloadData()
+            }
         })
     }
     
@@ -36,8 +38,13 @@ class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let league = leagueList[indexPath.row]
         
+        league.populateMembers(completion: { (success) -> Void in
+            if (success) {
+                cell!.countLabel.text = "Members: \(league.members.count)"
+            }
+        })
+        
         cell!.nameLabel.text = league.name
-        cell!.countLabel.text = "\(league.members.count)"
         cell!.icon.image = UIImage(named: league.imageName)
         
         return cell!
@@ -55,9 +62,6 @@ class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if let destVC = segue.destination as? LeagueDetailViewController {
             let selectedIndexPath = tableView.indexPathForSelectedRow
             destVC.selectedLeague = leagueList[(selectedIndexPath?.row)!]
-        }
-        else if let destVC = segue.destination as? CreateLeagueViewController {
-            
         }
     }
     

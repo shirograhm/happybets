@@ -58,19 +58,22 @@ class CreateLeagueViewController: UIViewController, UITextFieldDelegate {
         super.prepare(for: segue, sender: sender)
         if save {
             //Creates league when saved and when all fields are entered
-            let destVC = segue.destination as! LeagueViewController
-            UserModel.sharedUserModel.createLeague(name: name!, imageName: imageName!, completion: { (success, leagueCode) -> Void in
-                if !success {
-                    print("No bueno")
-                }
-            })
-            UserModel.sharedUserModel.getLeagues(completion: { (leagues) -> Void in
-                for league in leagues {
-                    UserModel.sharedUserModel.leagues.updateValue(league, forKey: league.uid)
-                }
-            })
-            //Updates League Overview
-            destVC.addLeague(league: UserModel.sharedUserModel.leagues[name!]!)
+            if let destVC = segue.destination as? LeagueViewController {
+                UserModel.sharedUserModel.createLeague(name: name!, imageName: imageName!, completion: { (success, leagueCode) -> Void in
+                    if !success {
+                        print("No bueno")
+                    }
+                    else {
+                        UserModel.sharedUserModel.getLeagues(completion: { (leagues) -> Void in
+                            for league in leagues {
+                                UserModel.sharedUserModel.leagues.updateValue(league, forKey: league.uid)
+                            }
+                            destVC.leagueList = leagues
+                            destVC.tableView.reloadData()
+                        })
+                    }
+                })
+            }
         }
     }
     
