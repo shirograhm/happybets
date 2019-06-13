@@ -79,22 +79,4 @@ extension happytests {
         XCTAssert(bet.uid == "W8CI3S30CZ9LJQ1831POA3")
         XCTAssert(bet.win == "in progress")
     }
-    
-    func testStoreBet() {
-        BetModel.storeBet(pts: 18, uID: "tempID", gameID: 2, homer: true, leagueID: "-LhD-wF8KsDpEfRVXhSE")
-        
-        Database.database().reference().child("leagues").child("-LhD-wF8KsDpEfRVXhSE").child("bets").child("tempID").observeSingleEvent(of: .value) { (snapshot) in
-            let data = snapshot.value as! [String : Any]
-            
-            let gameID = data["gameID"] as! Int
-            let homer = data["homer"] as! Bool
-            let pointAMT = data["pointAmount"] as! Int
-            let win = data["win"] as! String
-            
-            XCTAssert(gameID == 2)
-            XCTAssert(pointAMT == 18)
-            XCTAssert(homer == true)
-            XCTAssert(win == "in progress")
-        }
-    }
 }
