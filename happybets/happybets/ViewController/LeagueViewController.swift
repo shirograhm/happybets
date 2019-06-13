@@ -18,6 +18,10 @@ class LeagueViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         UserModel.sharedUserModel.getLeagues(completion: { (leagues) -> Void in
             DispatchQueue.main.async {
