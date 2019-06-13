@@ -32,6 +32,5 @@ public class BetModel {
         ref.child("leagues").child(leagueID).child("bets").child(uID).child("homer").setValue(homer)
         ref.child("leagues").child(leagueID).child("bets").child(uID).child("pointAMT").setValue(pts)
         ref.child("leagues").child(leagueID).child("bets").child(uID).child("win").setValue("in progress")
-        
     }
 }
