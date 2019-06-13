@@ -10,16 +10,25 @@ import XCTest
 import Firebase
 
 class happytests: XCTestCase {
-
+    var fir : FirebaseApp!
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
         // Configure Firebase app for testing
         FirebaseApp.configure()
+        fir = FirebaseApp.app()
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
+        // De-configure Firebase app for testing
+        fir.delete(firebaseDeleteCallback)
+    }
+    
+    func firebaseDeleteCallback(success: Bool) {
+        // Placeholder
     }
     
     func testEasyNumbers() {
@@ -64,5 +73,13 @@ extension happytests {
 
 // MARK: Bet model tests
 extension happytests {
-    
+    func testCreateBet() {
+        let bet = BetModel(gameID: 7, homer: true, pointAMT: 80, uid: "W8CI3S30CZ9LJQ1831POA3", win: "in progress")
+        
+        XCTAssert(bet.gameID == 7)
+        XCTAssert(bet.homer)
+        XCTAssert(bet.pointAmount == 80)
+        XCTAssert(bet.uid == "W8CI3S30CZ9LJQ1831POA3")
+        XCTAssert(bet.win == "in progress")
+    }
 }

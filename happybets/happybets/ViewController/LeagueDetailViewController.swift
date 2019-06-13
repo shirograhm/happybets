@@ -185,6 +185,7 @@ class LeagueDetailViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     @IBAction func unwindToDetail(segue: UIStoryboardSegue) {
+        // Reload data once the bet was placed
         betTableView.reloadData()
     }
     
