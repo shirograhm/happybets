@@ -10,21 +10,18 @@ import XCTest
 import Firebase
 
 class happytests: XCTestCase {
-    var fir : FirebaseApp!
-    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
         // Configure Firebase app for testing
         FirebaseApp.configure()
-        fir = FirebaseApp.app()
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         
         // De-configure Firebase app for testing
-        fir.delete(firebaseDeleteCallback)
+        FirebaseApp.app()?.delete(firebaseDeleteCallback)
     }
     
     func firebaseDeleteCallback(success: Bool) {
@@ -81,5 +78,23 @@ extension happytests {
         XCTAssert(bet.pointAmount == 80)
         XCTAssert(bet.uid == "W8CI3S30CZ9LJQ1831POA3")
         XCTAssert(bet.win == "in progress")
+    }
+    
+    func testStoreBet() {
+        BetModel.storeBet(pts: 18, uID: "tempID", gameID: 2, homer: true, leagueID: "-LhD-wF8KsDpEfRVXhSE")
+        
+        Database.database().reference().child("leagues").child("-LhD-wF8KsDpEfRVXhSE").child("bets").child("tempID").observeSingleEvent(of: .value) { (snapshot) in
+            let data = snapshot.value as! [String : Any]
+            
+            let gameID = data["gameID"] as! Int
+            let homer = data["homer"] as! Bool
+            let pointAMT = data["pointAmount"] as! Int
+            let win = data["win"] as! String
+            
+            XCTAssert(gameID == 2)
+            XCTAssert(pointAMT == 18)
+            XCTAssert(homer == true)
+            XCTAssert(win == "in progress")
+        }
     }
 }
