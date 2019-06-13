@@ -44,7 +44,7 @@ class LeagueDetailViewController: UIViewController, UITableViewDelegate, UITable
         leagueIcon.image = UIImage(named: selectedLeague?.imageName ?? "iconD")
         leagueId = selectedLeague?.uid
         selectedLeague?.populateMembers(completion: reloadLeaderboard)
-        selectedLeague?.populateBets(completion: reloadBets)
+        selectedLeague?.populateBets(userId: Auth.auth().currentUser!.uid, completion: reloadBets)
         // Do any additional setup after loading the view.
         
         members = selectedLeague!.members

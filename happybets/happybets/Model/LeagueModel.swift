@@ -42,14 +42,14 @@ public class LeagueModel {
         }
     }
     
-    func populateBets(completion: @escaping (_ success:Bool) -> Void) {
+    func populateBets(userId: String, completion: @escaping (_ success:Bool) -> Void) {
         //Should get all of the League data from Firebase into leagueList
         self.bets = []
         let betsRef = self.ref.child("leagues").child(self.uid).child("bets")
         betsRef.observeSingleEvent(of: .value) { (snapshot) in
             if let betsData = snapshot.value as? [String:[String:Any]] {
                 for (key, value) in betsData {
-                    if (key == Auth.auth().currentUser!.uid) {
+                    if (key == userId) {
                         self.bets.append(BetModel(gameID: value["gameID"] as! Int, homer: value["homer"] as! Bool, pointAMT: value["pointAMT"] as! Int, uid: key, win: value["win"] as! String))
                     }
                 }
