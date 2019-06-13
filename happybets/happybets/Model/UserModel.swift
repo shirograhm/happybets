@@ -8,7 +8,7 @@
 import Foundation
 import Firebase
 
-class UserModel: Hashable {
+public class UserModel: Hashable {
     
     // user singleton
     static var sharedUserModel = UserModel()
