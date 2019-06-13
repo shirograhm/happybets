@@ -1,6 +1,6 @@
 .DS_Store
 
 happybets/happybets.xcodeproj/project.pbxproj
-happybets/happybets.xcodeproj/xcuserdata/*
-happybets/happybets.xcworkspace/xcuserdata/*
-
+happybets/happybets.xcodeproj/xcuserdata/
+happybets/happybets.xcworkspace/xcuserdata/
+happybets/happybets.xcodeproj/project.xcworkspace/xcuserdata/
