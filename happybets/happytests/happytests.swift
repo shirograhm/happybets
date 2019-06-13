@@ -13,9 +13,6 @@ class happytests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        // Configure Firebase app for testing
-        FirebaseApp.configure()
     }
 
     override func tearDown() {
@@ -64,5 +61,13 @@ extension happytests {
 
 // MARK: Bet model tests
 extension happytests {
-    
+    func testCreateBet() {
+        let bet = BetModel(gameID: 7, homer: true, pointAMT: 80, uid: "W8CI3S30CZ9LJQ1831POA3", win: "in progress")
+        
+        XCTAssert(bet.gameID == 7)
+        XCTAssert(bet.homer)
+        XCTAssert(bet.pointAmount == 80)
+        XCTAssert(bet.uid == "W8CI3S30CZ9LJQ1831POA3")
+        XCTAssert(bet.win == "in progress")
+    }
 }
