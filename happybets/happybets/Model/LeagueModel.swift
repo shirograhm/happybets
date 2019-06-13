@@ -74,13 +74,5 @@ public class LeagueModel {
             }
         }
     }
-
-    func storeLeague() {
-        
-    }
-    
-    func createBet() {
-        
-    }
     
 }
