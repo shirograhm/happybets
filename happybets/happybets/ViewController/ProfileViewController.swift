@@ -27,10 +27,15 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         
         self.emailLabel.text = Auth.auth().currentUser!.email!
         
+        
         UserModel.sharedUserModel.getLeagues { (leagues) in
             //
             self.leagueModels = leagues
             DispatchQueue.main.async {
+                
+                if leagues.count == 0{
+                    self.pointsLabel.text = "Join a league!"
+                }
                 self.tableView.reloadData()
             }
         }

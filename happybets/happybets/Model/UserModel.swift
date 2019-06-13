@@ -30,7 +30,7 @@ public class UserModel: Hashable {
     // returns with success and the code of the league that was created
     func createLeague(name:String, imageName:String, completion: @escaping (_ code: Bool, _ leagueCode:Int?) -> Void) {
         let code = generateCode()
-        
+                
         let data:[String:Any] = ["name":name, "image":imageName, "code":code, "users":[getUserInfoDictionary()]]
         
         self.ref.child("leagues").childByAutoId().setValue(data){
@@ -138,6 +138,8 @@ public class UserModel: Hashable {
                 }
             
                 completion(leagueModels)
+            }else{
+                completion([])
             }
         }
     }

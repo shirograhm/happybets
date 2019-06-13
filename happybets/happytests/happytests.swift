@@ -69,6 +69,27 @@ extension happytests {
 }
 
 extension happytests{
+    
+    func testUserCreateLeague(){
+        
+        AuthenticatorModel.login(withEmail: "g@gmail.com", password: "password") { (results) in
+            UserModel.sharedUserModel.createLeague(name: "My League", imageName: "iconA.png") { (success, code) in
+                XCTAssert(success == true)
+            }
+        }
+
+    }
+    
+    func testGetLeagues(){
+        AuthenticatorModel.login(withEmail: "g@gmail.com", password: "password") { (results) in
+            UserModel.sharedUserModel.createLeague(name: "My League", imageName: "iconA.png") { (success, code) in
+                UserModel.sharedUserModel.getLeagues(completion: { (models) in
+                    XCTAssert(models.count > 0)
+                })
+            }
+        }
+    }
+    
     func testCreateUser(){
         let userModel = UserModel(email: "hello@gmail.com", uid: "W8CI3S30CZ9LJQ1832POA3")
         
@@ -90,6 +111,16 @@ extension happytests{
         
         XCTAssert(expected["email"] as! String == userModel.email!)
         XCTAssert(expected["uid"] as? String == userModel.uid)
+    }
+    
+    func testJoinLeagueSuccess(){
+        AuthenticatorModel.login(withEmail: "g@gmail.com", password: "password") { (results) in
+            UserModel.sharedUserModel.createLeague(name: "My League 1", imageName: "iconA.png") { (success, code) in
+                UserModel.sharedUserModel.joinLeague(code: code!, completion: { (success) in
+                    XCTAssert(success == true)
+                })
+            }
+        }
     }
     
     func testJoinLeague(){
