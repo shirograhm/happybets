@@ -11,6 +11,10 @@ import Foundation
 public class NewsModel {
     var articleList : [Article]?
     
+    public init()
+    {
+        articleList = []
+    }
     
     func retrieveArticles(closure : @escaping ([Article])->Void){
         let todoEndpoint: String = createUrl()
@@ -87,4 +91,5 @@ public class NewsModel {
         
         url = url + startDate + "%22%2C%22dateEnd%22%3A%22" + endDate + "%22%2C%22lang%22%3A%22eng%22%7D%5D%7D%7D&dataType=news&resultType=articles&articlesSortBy=rel&articlesCount=20&articleBodyLen=-1&apiKey=de25d70a-1050-41dd-baf0-8e13ba47a6c3&"
         return url
-    }}
+    }
+}
