@@ -21,7 +21,7 @@ public class AuthenticatorModel {
                 return
             }
             
-            ref.child("users").child(Auth.auth().currentUser!.uid).setValue(AuthenticatorModel.getUserInfoDictionary()){
+            ref.child("users").child(Auth.auth().currentUser!.uid).setValue(AuthenticatorModel.getUserInfoDictionary()) {
                     (error:Error?, ref:DatabaseReference) in
                     if let error = error {
                         print("Data could not be saved: \(error).")
