@@ -92,6 +92,12 @@ extension happytests{
         XCTAssert(expected["uid"] as? String == userModel.uid)
     }
     
+    func testJoinLeague(){
+        UserModel.sharedUserModel.joinLeague(code: 1234) { (success) in
+            XCTAssert(success == false)
+        }
+    }
+    
 }
 
 // MARK: Bet model tests

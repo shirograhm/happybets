@@ -142,6 +142,7 @@ public class UserModel: Hashable {
         }
     }
     
+    
     func getUserInfoDictionary() -> [String:Any]{
         return ["email":Auth.auth().currentUser!.email!, "uid":Auth.auth().currentUser!.uid, "points":100]
     }
