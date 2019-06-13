@@ -82,8 +82,6 @@ extension happytests {
             XCTAssert(testLeague.bets[0].pointAmount == 83)
             XCTAssert(testLeague.bets[0].win == "in progress")
         })
-        
-        betsRef.child("tempUserID").removeValue()
     }
 }
 
