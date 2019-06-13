@@ -42,10 +42,14 @@ class happytests: XCTestCase {
 // MARK: League model tests
 extension happytests {
     func testCreateLeague() {
-        let userModel = UserModel(email: "hi@gmail.com", uid: "W8CI3S30CZ9LJQ1831POA3")
+        let testLeague = LeagueModel(name: "test", uid:"1234", code:1, imageName:"iconA")
         
-        XCTAssert(userModel.email == "hi@gmail.com")
-        XCTAssert(userModel.uid == "W8CI3S30CZ9LJQ1831POA3")
+        XCTAssert(testLeague.name == "test")
+        XCTAssert(testLeague.uid == "1234")
+        XCTAssert(testLeague.code == 1)
+        XCTAssert(testLeague.imageName == "iconA")
+        XCTAssertTrue(testLeague.members.isEmpty)
+        XCTAssertTrue(testLeague.bets.isEmpty)
         
         /// THIS ERRORS!
         /*
@@ -65,6 +69,19 @@ extension happytests {
         waitForExpectations(timeout: 5, handler: nil)
         XCTAssertEqual(scaledImages?.count, originalImages.count)
         */
+    }
+    
+    func testPopulateBets() {
+        //assume the league is already in firebase
+        var testLeague = LeagueModel(name: "Beast-Sicko Moders", uid: "-LhHE7uKA_kwTwq4EJds", code: 1561, imageName: "iconD.png")
+        
+        testLeague.populateBets(userId: "Q7G15m8HYlZj4YqYoFnDjmsf5402", completion: {(Bool) -> Void in
+            XCTAssertFalse(testLeague.bets.isEmpty)
+            XCTAssert(testLeague.bets[0].gameID == 1)
+            XCTAssert(testLeague.bets[0].homer == false)
+            XCTAssert(testLeague.bets[0].pointAmount == 83)
+            XCTAssert(testLeague.bets[0].win == "in progress")
+        })
     }
 }
 
