@@ -68,6 +68,32 @@ extension happytests {
     }
 }
 
+extension happytests{
+    func testCreateUser(){
+        let userModel = UserModel(email: "hello@gmail.com", uid: "W8CI3S30CZ9LJQ1832POA3")
+        
+        XCTAssert(userModel.email == "hello@gmail.com")
+        XCTAssert(userModel.uid == "W8CI3S30CZ9LJQ1832POA3")
+    }
+    
+    func testGenerateCode(){
+        let userModel = UserModel(email: "hello@gmail.com", uid: "W8CI3S30CZ9LJQ1832POA3")
+        
+        // make sure code generated is four digits
+        XCTAssert(userModel.generateCode() < 10000)
+    }
+    
+    func testGetUserInfoDictionary(){
+        let expected = ["email":"hello@gmail.com", "uid":"W8CI3S30CZ9LJQ1832POA3", "points":100] as [String : Any]
+        
+        let userModel = UserModel(email: "hello@gmail.com", uid: "W8CI3S30CZ9LJQ1832POA3")
+        
+        XCTAssert(expected["email"] as! String == userModel.email!)
+        XCTAssert(expected["uid"] as? String == userModel.uid)
+    }
+    
+}
+
 // MARK: Bet model tests
 extension happytests {
     func testCreateBet() {
