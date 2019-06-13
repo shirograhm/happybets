@@ -186,8 +186,7 @@ class LeagueDetailViewController: UIViewController, UITableViewDelegate, UITable
     
     @IBAction func unwindToDetail(segue: UIStoryboardSegue) {
         // Reload data once the bet was placed
-        betTableData = selectedLeague!.bets
-        betTableView.reloadData()
+        selectedLeague!.populateBets(userId: Auth.auth().currentUser!.uid, completion: reloadBets)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
