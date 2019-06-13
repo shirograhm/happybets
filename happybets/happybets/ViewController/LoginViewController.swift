@@ -63,7 +63,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
         if segue.identifier == "toLeagueView" {
             // Do stuff to get to league view
-            let tabbar = dest as! SuperTabViewController
+            //let tabbar = dest as! SuperTabViewController
         }
         
         if segue.identifier == "toSignUp" {

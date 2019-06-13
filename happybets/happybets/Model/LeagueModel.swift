@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-class LeagueModel {
+public class LeagueModel {
     
     var name: String
     var imageName: String
@@ -19,7 +19,7 @@ class LeagueModel {
     var bets =  [BetModel]()
     var ref: DatabaseReference = Database.database().reference()
 
-    init(name: String, uid:String, code:Int, imageName:String) {
+    public init(name: String, uid:String, code:Int, imageName:String) {
         self.name = name
         self.uid = uid
         self.code = code

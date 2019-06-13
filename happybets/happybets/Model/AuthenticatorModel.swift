@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-class AuthenticatorModel {
+public class AuthenticatorModel {
     
     public static func createUser(email: String, password: String, _ callback: ((Error?) -> ())? = nil) {
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in

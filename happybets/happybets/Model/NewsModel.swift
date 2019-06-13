@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NewsModel {
+public class NewsModel {
     var articleList : [Article]?
     
     

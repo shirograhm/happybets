@@ -20,10 +20,9 @@ public class UserModel: Hashable {
     var leagues = [String : LeagueModel]()
 
     
-    // private initializer
-    private init(){}
+    public init(){}
     
-    init(email:String, uid:String){
+    public init(email:String, uid:String){
         self.email = email
         self.uid = uid
     }
@@ -158,11 +157,11 @@ public class UserModel: Hashable {
     
     // MARK: - Hashable functions
     
-    static func == (lhs: UserModel, rhs: UserModel) -> Bool {
+    public static func == (lhs: UserModel, rhs: UserModel) -> Bool {
         return lhs.uid == rhs.uid
     }
     
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(uid)
     }
     

@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-class GameModel {
+public class GameModel {
     var home: String!
     var gameID: Int!
     var away: String!

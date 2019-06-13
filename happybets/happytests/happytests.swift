@@ -28,12 +28,20 @@ class happytests: XCTestCase {
     func testAdminLogins() {
         // Some code to test our authentication here
     }
-    
-    func testCreateLeague(){
+}
+
+// MARK: League model tests
+extension happytests {
+    func testCreateLeague() {
+        let userModel = UserModel(email: "hi@gmail.com", uid: "W8CI3S30CZ9LJQ1831POA3")
         
-        let userModel = UserModel()
+        XCTAssert(userModel.email == "hi@gmail.com")
+        XCTAssert(userModel.uid == "W8CI3S30CZ9LJQ1831POA3")
         
+        /// THIS ERRORS!
+        /*
         let originalImages = loadImages()
+        
         // Create an expectation
         let expectation = self.expectation(description: "Scaling")
         var scaledImages: [UIImage]?
@@ -47,20 +55,11 @@ class happytests: XCTestCase {
         // after 5 seconds. This is where the test runner will pause.
         waitForExpectations(timeout: 5, handler: nil)
         XCTAssertEqual(scaledImages?.count, originalImages.count)
-    
-
+        */
     }
+}
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Some time-pertinent function tests
-            let x = 8.0
-            let y = x - 3.5
-            let z = y + 3 * x
-            print(String(z) + " is a cool number!")
-        }
-    }
-    
+// MARK: Bet model tests
+extension happytests {
     
 }

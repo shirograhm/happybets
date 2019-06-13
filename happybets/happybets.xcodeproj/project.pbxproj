@@ -20,6 +20,12 @@
 		2893144C229752A600F38A0A /* LeagueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893144B229752A600F38A0A /* LeagueModel.swift */; };
 		2893144E229752AD00F38A0A /* BetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893144D229752AD00F38A0A /* BetModel.swift */; };
 		28931450229752BC00F38A0A /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893144F229752BC00F38A0A /* NewsModel.swift */; };
+		28D0DD8D22B1DE4200CDFA5C /* BetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893144D229752AD00F38A0A /* BetModel.swift */; };
+		28D0DD8E22B1DE7800CDFA5C /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288C70EB22ADD50700D0F390 /* GameModel.swift */; };
+		28D0DD8F22B1DE7B00CDFA5C /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893144F229752BC00F38A0A /* NewsModel.swift */; };
+		28D0DD9022B1DE7E00CDFA5C /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7080B5B022ACE17700F61B21 /* Article.swift */; };
+		28D0DD9122B1DE8100CDFA5C /* ArticleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7080B5AE22ACE0C800F61B21 /* ArticleList.swift */; };
+		28D0DD9222B1DE8600CDFA5C /* AuthenticatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47944FEF228E4C79004BD0DE /* AuthenticatorModel.swift */; };
 		28D2F6F0228397CC0008ECC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D2F6EF228397CC0008ECC0 /* AppDelegate.swift */; };
 		28D2F6F5228397CC0008ECC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D2F6F3228397CC0008ECC0 /* Main.storyboard */; };
 		28D2F6F7228397CD0008ECC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28D2F6F6228397CD0008ECC0 /* Assets.xcassets */; };
@@ -416,7 +422,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28D0DD9022B1DE7E00CDFA5C /* Article.swift in Sources */,
+				28D0DD8F22B1DE7B00CDFA5C /* NewsModel.swift in Sources */,
+				28D0DD8E22B1DE7800CDFA5C /* GameModel.swift in Sources */,
 				E70E82A822AAE8F80013C28D /* LeagueModel.swift in Sources */,
+				28D0DD9122B1DE8100CDFA5C /* ArticleList.swift in Sources */,
+				28D0DD8D22B1DE4200CDFA5C /* BetModel.swift in Sources */,
+				28D0DD9222B1DE8600CDFA5C /* AuthenticatorModel.swift in Sources */,
 				E70E82A722AAE4A10013C28D /* UserModel.swift in Sources */,
 				28081C3B228E9B0600F4F22A /* happytests.swift in Sources */,
 			);

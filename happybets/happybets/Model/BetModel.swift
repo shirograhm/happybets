@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-class BetModel {
+public class BetModel {
     
     var gameID: Int!
     var homer: Bool!
@@ -17,7 +17,7 @@ class BetModel {
     var uid: String!
     var win: String!
     
-    init(gameID: Int, homer: Bool, pointAMT: Int, uid: String, win: String) {
+    public init(gameID: Int, homer: Bool, pointAMT: Int, uid: String, win: String) {
         self.gameID = gameID
         self.homer = homer
         self.pointAmount = pointAMT
