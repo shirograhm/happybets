@@ -10,21 +10,18 @@ import XCTest
 import Firebase
 
 class happytests: XCTestCase {
-    var fir : FirebaseApp!
-    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
         // Configure Firebase app for testing
         FirebaseApp.configure()
-        fir = FirebaseApp.app()
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         
         // De-configure Firebase app for testing
-        fir.delete(firebaseDeleteCallback)
+        FirebaseApp.app()?.delete(firebaseDeleteCallback)
     }
     
     func firebaseDeleteCallback(success: Bool) {
