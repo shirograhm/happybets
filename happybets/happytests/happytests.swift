@@ -36,6 +36,16 @@ class happytests: XCTestCase {
     
     func testAdminLogins() {
         // Some code to test our authentication here
+        AuthenticatorModel.login(withEmail: "g@gmail.com", password: "password") { (results) in
+            XCTAssert(results != nil)
+        }
+    }
+    
+    func testRegistration() {
+        // Some code to test our authentication here
+        AuthenticatorModel.createUser(email: "heloo@gmail.com", password: "password") { (err) in
+            XCTAssert(err == nil)
+        }
     }
 }
 
